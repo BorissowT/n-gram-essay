@@ -4,6 +4,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{graphicx}
 
 \title{N-gram Language Models}
 \author{
@@ -22,12 +24,12 @@
 
 % Abstract
 \begin{abstract}
-This is a brief summary of your essay. It should be concise and informative.
+	This is a brief summary of your essay. It should be concise and informative.
 \end{abstract}
 
 % Table of contents
 \tableofcontents
-\newpage
+\clearpage
 
 % Sections
 \section{Introduction}
@@ -35,28 +37,29 @@ This is the introduction section where you provide background information on you
 
 \section{Main Section 1 (FELIX)}
 \subsection{Subsection 1.1}
-Here you can start discussing the details of your first main point. For example, algorithms are a fundamental part of computer science and understanding them is crucial for any software developer. As stated in \cite{cormen2009}, algorithms are essential for efficient problem solving in computing.
+
 
 \subsection{Subsection 1.2}
-Continue with further details and analysis related to your first main point.
 
+
+\clearpage
 \section{Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}
 \subsection{Was ist un-seen N-Grams?}
-Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "zero probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}. 
+Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "zero probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
 
 Betrachten wir die Wörter, die auf das Bigram aus Daniel Jurafskys Buch basieren. Ein Textkorpus zusammen mit ihrer Anzahl:
 
 \begin{itemize}
-  \item denied the allegations: 5
-  \item denied the speculation: 2
-  \item denied the rumors: 1
-  \item denied the report: 1
+	\item denied the allegations: 5
+	\item denied the speculation: 2
+	\item denied the rumors: 1
+	\item denied the report: 1
 \end{itemize}
 
 Aber nehmen wir an, unser Testsatz enthält Sätze wie:
 \begin{itemize}
-  \item denied the offer
-  \item denied the loan
+	\item denied the offer
+	\item denied the loan
 \end{itemize}
 
 P(offer|denied the) ist 0!
@@ -69,10 +72,83 @@ Das Problem heißt “Data Sparsity” \cite{dremio2023}. Also kurz gesagt, das 
 Die Methode zur Lösung dieses Problems heißt: Smoothing oder Discounting.
 
 \subsection{Smoothing Techniques}
-Further details and analysis related to your second main point.
+\subsubsection{Laplace-Glättung. Add One (Add X).}
+Die einfachste Art der Glättung besteht darin, zu allen n-Gramm-Zählungen einen Wert zu addieren, bevor wir sie zu Wahrscheinlichkeiten normalisieren. Alle Zählungen, die vorher Null waren, haben nun den Wert 1, die Zählungen von 1 werden zu 2 usw. Dieser Algorithmus wird als Laplace-Glättung oder Additive Glätterung bezeichnet \cite{foster2020}.
 
-\subsection{Vergleich von N-Grammen und neuronalen Netzen}
-Further details and analysis related to your second main point.
+Statt
+\begin{center}
+	\includegraphics[width=0.3\textwidth]{statics/Borisov/1.PNG}
+\end{center}
+
+Wir setzen
+\begin{center}
+	\includegraphics[width=0.4\textwidth]{statics/Borisov/2.PNG}
+\end{center}
+
+Da das Vokabular aus V-Wörtern besteht und jedes Wort inkrementiert wurde, müssen wir auch den Nenner anpassen, um die zusätzlichen V-Beschachtungen zu berücksichtigen.
+\begin{center}
+	\includegraphics[width=0.6\textwidth]{statics/Borisov/3.PNG}
+\end{center}
+
+\cite{maucher2022}
+
+Eine Alternative zur Glättung durch Addition besteht darin, einen etwas geringeren Anteil der Wahrscheinlichkeitsmasse von den gesehenen zu den ungesehenen Ereignissen zu verschieben. Anstatt zu jeder Zählung 1 zu addieren, fügen wir einen Bruchteil der Zählung k hinzu.
+\begin{center}
+	\includegraphics[width=0.4\textwidth]{statics/Borisov/4.PNG}
+\end{center}
+
+\cite{jurafsky2023}.
+
+\subsubsection{Good-Turing Glättung}
+Wie berechne ich die Wahrscheinlichkeit von un-seen N-Grams?
+
+Der erste Schritt der Berechnung besteht darin, die Wahrscheinlichkeit abzuschätzen, dass ein zukünftig beobachtetes Fall zu einer bisher nicht gesehenen Art gehört. Diese Schätzung ist:
+\begin{center}
+	\includegraphics[width=0.3\textwidth]{statics/Borisov/5.PNG}
+\end{center}
+
+Der nächste Schritt besteht darin, die Wahrscheinlichkeit zu schätzen, dass das nächste beobachtete Fall einer Art angehört, die bereits r-mal beobachtet wurde. Für eine einzelne Art beträgt diese Schätzung:
+\begin{center}
+	\includegraphics[width=0.2\textwidth]{statics/Borisov/6.PNG}
+\end{center}
+Good-Turing-Smoothing löst dieses Dilemma, indem es die Häufigkeitswerte anpasst. Es wird so getan, als ob Arten, die eigentlich r-mal vorkommen, \( r^* \)-mal vorkommen, mit
+\begin{center}
+	\includegraphics[width=0.3\textwidth]{statics/Borisov/7.PNG}
+\end{center}
+\cite{maucher2022}, \cite{gale1995}
+
+\subsubsection{Katz Backoff Glättung}
+\quad Wenn ein benötigtes n-Gramm in einem Backoff-N-Gramm-Modell keine Vorkommen aufweist, gehen wir zum (n-1)-Gramm über. Dieser Prozess wird fortgesetzt, bis wir eine Sequenz finden, die einige Vorkommen hat.
+\\ Damit ein Backoff-Modell eine korrekte Wahrscheinlichkeitsverteilung ergibt, müssen die n-Gramme höherer Ordnung reduziert werden, um etwas Wahrscheinlichkeitsmasse für die n-Gramme niedrigerer Ordnung zu reservieren. Ähnlich wie bei der Add-One-Glättung führt die Verwendung der nicht diskontierten MLE-Wahrscheinlichkeit dazu, dass bei der Ersetzung eines n-Gramms mit einer Wahrscheinlichkeit von Null durch ein n-Gramm niedrigerer Ordnung zusätzliche Wahrscheinlichkeitsmasse hinzugefügt wird. Dies würde dazu führen, dass die Gesamtwahrscheinlichkeit, die das Sprachmodell allen möglichen Zeichenketten zuweist, größer als 1 ist. Neben diesem expliziten Abzinsungsfaktor benötigen wir eine Funktion a, um diese Wahrscheinlichkeitsmasse auf die n-Gramme niedrigerer Ordnung zu verteilen.
+\\ \\Beim Katz-Backoff stützen wir uns auf eine diskontierte Wahrscheinlichkeit P*, wobei wir rekursiv auf die Katz-Wahrscheinlichkeit für das (n-1)-Gramm mit kürzerer Vorgeschichte zurückgehen. Die Wahrscheinlichkeit für ein Backoff n-Gramm PBO wird also wie folgt berechnet:
+\begin{center}
+	\includegraphics[width=0.4\textwidth]{statics/Borisov/8.PNG}
+\end{center}
+\begin{center}
+	\includegraphics[width=0.7\textwidth]{statics/Borisov/9.PNG}
+\end{center}
+
+\quad Zur Berechnung von $\alpha$ ist es sinnvoll, zunächst eine Größe $\beta$ zu definieren, die die verbleibende Wahrscheinlichkeitsmasse für das $(n - 1)$-Gramm darstellt:
+
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{statics/Borisov/10.PNG}
+\end{center}
+
+Anschließend:
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{statics/Borisov/11.PNG}
+\end{center}
+
+\subsection{Vergleich von N-Grammen und neuronalen Netzen.}
+\quad Im Allgemeinen sind neuronale Netze fortschrittlichere und komplexere Instrumente als N-Gramme. Ihr Vorteil liegt in vielen Aspekten. Zum Bespie: N-Gramme erfassen nur den lokalen Kontext. Ein Trigramm-Modell berücksichtigt nur zwei vorangehende Wörter, um das nächste Wort vorherzusagen. Sie sind nicht in der Lage, weitreichende Abhängigkeiten zu verstehen. Mit steigendem Wert von "n" wächst die Zahl der möglichen n-Gramme exponentiell, was zu hohem Speicherverbrauch und Sparsamkeitsproblemen führt. Probleme mit Wörtern, die mehrere Bedeutungen haben (Polysemie), oder mit verschiedenen Wörtern, die gleich klingen (Homonymie), weil ihnen ein tiefes Verständnis des Kontextes fehlt. N-Grams erfordern manuelles Feature-Engineering, um die relevanten n-Gramme auszuwählen, und führen oft zu hochdimensionalen, spärlichen Vektoren usw.
+
+\cite{roshmita2023}
+\cite{clarkGiorgoloLappin}
+\\
+Neuronale Netze sind mittlerweile kontextbewusst. Insbesondere mit Architekturen wie LSTM (Long Short-Term Memory) oder Transformer-Modellen können neuronale Netze weitreichende Abhängigkeiten und kontextuelle Informationen über ganze Sätze oder sogar Absätze hinweg erfassen. Sie verfügen über ein automatisches Lernen von Merkmalen während des Trainingsprozesses, wodurch sich der Bedarf an umfangreicher manueller Merkmalstechnik verringert usw.Wir müssen jedoch den Vorteil von N-Grammen anerkennen. Bei kurzen Texten sind N-Gramm-Methoden dem neuronalen Netz überlegen.
+\cite{babukumar2010}
 
 \section{Main Section 3 (SIMON)}
 \subsection{Subsection 3.1}
@@ -84,23 +160,34 @@ Further details and analysis related to your third main point.
 Summarize the main points discussed in your essay and provide your final thoughts.
 
 % Bibliography
-\newpage
+\clearpage
 \begin{thebibliography}{9}
 
-\bibitem{cormen2009}
-Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, \textit{Introduction to Algorithms}, 3rd Edition, MIT Press, 2009.
+	\bibitem{jurafsky2023}
+	Daniel Jurafsky and James H. Martin, \textit{Speech and Language Processing}, 3rd Edition, Pearson, 2023.
 
-\bibitem{jurafsky2023}
-Daniel Jurafsky and James H. Martin, \textit{Speech and Language Processing}, 3rd Edition, Pearson, 2023.
+	\bibitem{dremio2023}
+	Dremio, ``Data Sparsity,'' \url{https://www.dremio.com/wiki/data-sparsity/}, Accessed: June 1, 2024.
 
-\bibitem{dremio2023}
-Dremio, ``Data Sparsity,'' \url{https://www.dremio.com/wiki/data-sparsity/}, Accessed: June 1, 2024.
+	\bibitem{foster2020}
+	David Foster, \textit{Generative Deep Learning: Teaching Machines to Paint, Write, Compose, and Play}, O'Reilly Media, 2020.
 
-\bibitem{example2}
-Author Name, ``Article Title,'' \textit{Journal Name}, Volume(Issue), pages, Year.
+	\bibitem{maucher2022}
+	Prof. Dr. Johannes Maucher \url{https://griesshaber.pages.mi.hdm-stuttgart.de/nlp/04ngram/01ngram.html}, Accessed: June 1, 2024.
 
-\bibitem{example3}
-Author Name, ``Webpage Title,'' \url{http://example.com}, Accessed: Date.
+	\bibitem{gale1995}
+	William A. Gale, "Good–Turing smoothing without tears," \textit{Journal of Quantitative Linguistics}, 1995.
+
+	\bibitem{roshmita2023}
+	Roshmita Dey , Accessed: June 1,\textit{Understanding Language Modeling: From N-grams to Transformer-based Neural Models} 2024.
+
+	\bibitem{clarkGiorgoloLappin}
+	Alexander Clark, Gianluca Giorgolo, and Shalom Lappin, \textit{Statistical Representation of Grammaticality Judgements: the Limits of
+		N-Gram Models}, Department of Philosophy, King’s College London
+
+	\bibitem{babukumar2010}
+	A. Suresh Babu, Kumar P.N.V.S.Pavan
+	\textit{Comparing Neural Network Approach with N-Gram Approach for Text Categorization},     January 2010International Journal on Computer Science and Engineering 2(1)
 
 \end{thebibliography}
 

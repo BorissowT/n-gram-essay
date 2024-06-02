@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  2 JUN 2024 15:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  2 JUN 2024 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -212,84 +212,249 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip53
+) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks25
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
 ) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count285
+\l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box53
 ) (mucproc_demo.aux)
 \openout1 = `mucproc_demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-Package hyperref Info: Link coloring OFF on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+Package hyperref Info: Link coloring OFF on input line 20.
  (mucproc_demo.out) (mucproc_demo.out)
 \@outlinefile=\write3
 \openout3 = `mucproc_demo.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(81.94394pt, 433.62pt, 81.94394pt)
+* v-part:(T,H,B)=(106.75473pt, 578.15999pt, 160.13213pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=433.62pt
+* \textheight=578.15999pt
+* \oddsidemargin=9.67395pt
+* \evensidemargin=9.67395pt
+* \topmargin=-2.51526pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count289
+\scratchdimen=\dimen164
+\scratchbox=\box54
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen165
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks27
+) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
  (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
  (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (mucproc_demo.toc
-Overfull \hbox (24.99547pt too wide) in paragraph at lines 5--5
- [] [][]\OT1/cmr/bx/n/12 Fortgeschrittene Konzepte und Tech-niken in N-Gramm-Modellen 
- []
-
-)
+) (mucproc_demo.toc)
 \tf@toc=\write4
 \openout4 = `mucproc_demo.toc'.
 
  [1
 
-{C:/Users/tim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (27.49567pt too wide) in paragraph at lines 45--46
-\OT1/cmr/m/n/12 prob-a-bil-ity n-grams" haben, die in Wirk-lichkeit eine Nicht-Null-Wahrscheinlichkeit
+{C:/Users/tim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
+
+]
+Overfull \hbox (5.70415pt too wide) in paragraph at lines 76--77
+\OT1/cmr/m/n/12 Wert zu ad-dieren, bevor wir sie zu Wahrschein-lichkeiten nor-mal-isieren. Alle Z^^?ahlungen,
  []
 
-[2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-[]\OT1/cmr/m/n/12 Dremio, ``Data Spar-sity,'' []$\OT1/cmtt/m/n/12 https : / / www . dremio . com / wiki /
+[3
+
+]
+<statics/Borisov/1.PNG, id=104, 190.46156pt x 33.87656pt>
+File: statics/Borisov/1.PNG Graphic file (type png)
+<use statics/Borisov/1.PNG>
+Package pdftex.def Info: statics/Borisov/1.PNG  used on input line 80.
+(pdftex.def)             Requested size: 130.08731pt x 23.13861pt.
+<statics/Borisov/2.PNG, id=106, 205.5178pt x 27.85406pt>
+File: statics/Borisov/2.PNG Graphic file (type png)
+<use statics/Borisov/2.PNG>
+Package pdftex.def Info: statics/Borisov/2.PNG  used on input line 85.
+(pdftex.def)             Requested size: 173.44534pt x 23.50731pt.
+<statics/Borisov/3.PNG, id=107, 401.24907pt x 63.98906pt>
+File: statics/Borisov/3.PNG Graphic file (type png)
+<use statics/Borisov/3.PNG>
+Package pdftex.def Info: statics/Borisov/3.PNG  used on input line 90.
+(pdftex.def)             Requested size: 260.17464pt x 41.49376pt.
+<statics/Borisov/4.PNG, id=109, 227.34938pt x 53.44969pt>
+File: statics/Borisov/4.PNG Graphic file (type png)
+<use statics/Borisov/4.PNG>
+Package pdftex.def Info: statics/Borisov/4.PNG  used on input line 97.
+(pdftex.def)             Requested size: 173.44534pt x 40.77713pt.
+
+Overfull \hbox (11.10457pt too wide) in paragraph at lines 105--106
+[]\OT1/cmr/m/n/12 Der er-ste Schritt der Berech-nung besteht darin, die Wahrschein-lichkeit abzusch^^?atzen,
  []
 
-[5] (mucproc_demo.aux)
+<statics/Borisov/5.PNG, id=111, 167.12437pt x 45.16875pt>
+File: statics/Borisov/5.PNG Graphic file (type png)
+<use statics/Borisov/5.PNG>
+Package pdftex.def Info: statics/Borisov/5.PNG  used on input line 107.
+(pdftex.def)             Requested size: 130.08731pt x 35.16116pt.
+[4 <./statics/Borisov/1.PNG> <./statics/Borisov/2.PNG> <./statics/Borisov/3.PNG> <./statics/Borisov/4.PNG>]
+<statics/Borisov/6.PNG, id=122, 131.74219pt x 54.9553pt>
+File: statics/Borisov/6.PNG Graphic file (type png)
+<use statics/Borisov/6.PNG>
+Package pdftex.def Info: statics/Borisov/6.PNG  used on input line 112.
+(pdftex.def)             Requested size: 86.72267pt x 36.17752pt.
+<statics/Borisov/7.PNG, id=123, 171.64125pt x 57.96657pt>
+File: statics/Borisov/7.PNG Graphic file (type png)
+<use statics/Borisov/7.PNG>
+Package pdftex.def Info: statics/Borisov/7.PNG  used on input line 116.
+(pdftex.def)             Requested size: 130.08731pt x 43.93297pt.
+
+Overfull \hbox (24.37526pt too wide) in paragraph at lines 121--124
+\OT1/cmr/m/n/12 durch ein n-Gramm niedrigerer Ord-nung zus^^?atzliche Wahrschein-lichkeits-masse hinzugef^^?ugt
+ []
+
+
+Overfull \hbox (4.80324pt too wide) in paragraph at lines 121--124
+\OT1/cmr/m/n/12 pliziten Abzin-sungs-fak-tor ben^^?otigen wir eine Funk-tion a, um diese Wahrschein-lichkeits-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+
+Overfull \hbox (35.39876pt too wide) in paragraph at lines 121--124
+\OT1/cmr/m/n/12 wir rekur-siv auf die Katz-Wahrscheinlichkeit f^^?ur das (n-1)-Gramm mit k^^?urzerer Vorgeschichte
+ []
+
+<statics/Borisov/8.PNG, id=126, 220.57407pt x 33.87656pt>
+File: statics/Borisov/8.PNG Graphic file (type png)
+<use statics/Borisov/8.PNG>
+Package pdftex.def Info: statics/Borisov/8.PNG  used on input line 125.
+(pdftex.def)             Requested size: 173.44534pt x 26.63966pt.
+<statics/Borisov/9.PNG, id=127, 569.87906pt x 108.405pt>
+File: statics/Borisov/9.PNG Graphic file (type png)
+<use statics/Borisov/9.PNG>
+Package pdftex.def Info: statics/Borisov/9.PNG  used on input line 128.
+(pdftex.def)             Requested size: 303.53267pt x 57.73888pt.
+[5 <./statics/Borisov/5.PNG> <./statics/Borisov/6.PNG> <./statics/Borisov/7.PNG>]
+<statics/Borisov/10.PNG, id=138, 595.47469pt x 72.27pt>
+File: statics/Borisov/10.PNG Graphic file (type png)
+<use statics/Borisov/10.PNG>
+Package pdftex.def Info: statics/Borisov/10.PNG  used on input line 135.
+(pdftex.def)             Requested size: 346.89731pt x 42.10077pt.
+<statics/Borisov/11.PNG, id=139, 515.67656pt x 68.50594pt>
+File: statics/Borisov/11.PNG Graphic file (type png)
+<use statics/Borisov/11.PNG>
+Package pdftex.def Info: statics/Borisov/11.PNG  used on input line 141.
+(pdftex.def)             Requested size: 346.89731pt x 46.08585pt.
+ [6 <./statics/Borisov/8.PNG> <./statics/Borisov/9.PNG> <./statics/Borisov/10.PNG> <./statics/Borisov/11.PNG>] [7] [8
+
+] (mucproc_demo.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `mucproc_demo.out' has not changed.
-(rerunfilecheck)             Checksum: 21C891DDB33007B52854C7674B5D8FB3;2153.
+(rerunfilecheck)             Checksum: 63545199BDE73AF7F0BF6E5251F6023D;2773.
  ) 
 Here is how much of TeX's memory you used:
- 8853 strings out of 474485
- 135927 string characters out of 5744679
- 1934542 words of memory out of 5000000
- 31028 multiletter control sequences out of 15000+600000
+ 10246 strings out of 474485
+ 158352 string characters out of 5744679
+ 1936542 words of memory out of 5000000
+ 32375 multiletter control sequences out of 15000+600000
  568293 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,561b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\tim\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mucproc_demo.pdf (5 pages, 117243 bytes).
+ 75i,6n,79p,935b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\tim\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on mucproc_demo.pdf (8 pages, 220311 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
