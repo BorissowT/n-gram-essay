@@ -42,12 +42,36 @@ Continue with further details and analysis related to your first main point.
 
 \section{Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}
 \subsection{Was ist un-seen N-Grams?}
-Discuss the details of your second main point.
+Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "zero probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}. 
 
-\subsection{Smoothing Techniques.}
+Betrachten wir die Wörter, die auf das Bigram aus Daniel Jurafskys Buch basieren. Ein Textkorpus zusammen mit ihrer Anzahl:
+
+\begin{itemize}
+  \item denied the allegations: 5
+  \item denied the speculation: 2
+  \item denied the rumors: 1
+  \item denied the report: 1
+\end{itemize}
+
+Aber nehmen wir an, unser Testsatz enthält Sätze wie:
+\begin{itemize}
+  \item denied the offer
+  \item denied the loan
+\end{itemize}
+
+P(offer|denied the) ist 0!
+P(loan|denied the) ist 0!
+
+Diese Nullen bedeuten, dass wir die Wahrscheinlichkeit anderer Wortkombinationen stark unterschätzt haben, was die richtige Entscheidung der Anwendung, die auf unserem Modell läuft, stark beeinflussen könnte.
+
+Das Problem heißt “Data Sparsity” \cite{dremio2023}. Also kurz gesagt, das bedeutet, dass viele Daten in einem Datensatz fehlen oder auf Null gesetzt sind, sodass die meisten Zellen in einer Tabelle leer bleiben. Dies tritt häufig bei spärlichen Matrizen oder hochdimensionalen Datensätzen auf, wo nicht alle Elemente beobachtet oder erfasst werden. Was können wir also mit den Wörtern machen, die wir verwenden und die nicht in den Kontext unserer Trainingsdaten passen?
+
+Die Methode zur Lösung dieses Problems heißt: Smoothing oder Discounting.
+
+\subsection{Smoothing Techniques}
 Further details and analysis related to your second main point.
 
-\subsection{Vergleich von N-Grammen und neuronalen Netzen.}
+\subsection{Vergleich von N-Grammen und neuronalen Netzen}
 Further details and analysis related to your second main point.
 
 \section{Main Section 3 (SIMON)}
@@ -65,6 +89,12 @@ Summarize the main points discussed in your essay and provide your final thought
 
 \bibitem{cormen2009}
 Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein, \textit{Introduction to Algorithms}, 3rd Edition, MIT Press, 2009.
+
+\bibitem{jurafsky2023}
+Daniel Jurafsky and James H. Martin, \textit{Speech and Language Processing}, 3rd Edition, Pearson, 2023.
+
+\bibitem{dremio2023}
+Dremio, ``Data Sparsity,'' \url{https://www.dremio.com/wiki/data-sparsity/}, Accessed: June 1, 2024.
 
 \bibitem{example2}
 Author Name, ``Article Title,'' \textit{Journal Name}, Volume(Issue), pages, Year.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  2 JUN 2024 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  2 JUN 2024 15:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -260,26 +260,36 @@ Overfull \hbox (24.99547pt too wide) in paragraph at lines 5--5
 
  [1
 
-{C:/Users/tim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] (mucproc_demo.aux)
+{C:/Users/tim/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (27.49567pt too wide) in paragraph at lines 45--46
+\OT1/cmr/m/n/12 prob-a-bil-ity n-grams" haben, die in Wirk-lichkeit eine Nicht-Null-Wahrscheinlichkeit
+ []
+
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]\OT1/cmr/m/n/12 Dremio, ``Data Spar-sity,'' []$\OT1/cmtt/m/n/12 https : / / www . dremio . com / wiki /
+ []
+
+[5] (mucproc_demo.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `mucproc_demo.out' has not changed.
-(rerunfilecheck)             Checksum: 48006E7F19D1EE68D48959FDCD8BC83D;2163.
+(rerunfilecheck)             Checksum: 21C891DDB33007B52854C7674B5D8FB3;2153.
  ) 
 Here is how much of TeX's memory you used:
- 8841 strings out of 474485
- 135753 string characters out of 5744679
+ 8853 strings out of 474485
+ 135927 string characters out of 5744679
  1934542 words of memory out of 5000000
- 31020 multiletter control sequences out of 15000+600000
- 567956 words of font info for 74 fonts, out of 8000000 for 9000
+ 31028 multiletter control sequences out of 15000+600000
+ 568293 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,541b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mucproc_demo.pdf (4 pages, 109307 bytes).
+ 75i,6n,79p,561b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\tim\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on mucproc_demo.pdf (5 pages, 117243 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
