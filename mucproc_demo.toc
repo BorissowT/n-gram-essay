@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Subsection 1.1}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Subsection 1.2}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.1}Sprachmodelle}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}N-Gramme}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Was ist un-seen N-Grams?}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Smoothing Techniques}{4}{subsection.2.2}%

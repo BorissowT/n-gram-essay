@@ -34,10 +34,37 @@
 % Sections
 \section{Introduction}
 
-\subsection{Subsection 1.1}
+\subsection{Sprachmodelle}
+Sprachmodelle sind der Versuch beispielsweise natürliche Sprache als mathematisches 
+Modell darstellen zu können. Ihnen liegt meist ein stochastischer Prozess zugrunde. 
+Bekannte Modelle sind:
+
+\begin{itemize}
+	\item RNN (Rekurrente Neuronale Netze)
+	\begin{itemize}
+        \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell kohärente Sätze gebildet werden.
+        \item[-] Verschwindender Gradient. Abhängigkeiten in großer Entfernung können nicht mehr erkannt werden.
+    \end{itemize}
+	\item LSTM (Long Short-Term Memory)
+	\begin{itemize}
+        \item[-] Art von RNN die das Problem des verschwindenden Gradienten durch Speicherzellen lösen.
+        \item[-] Zelle ermöglicht selektives merken oder vergessen, wodurch langfristige Abhängigkeiten berücksichtigt werden können.
+    \end{itemize}
+	\item GRU:
+	\begin{itemize}
+        \item[-] Zielen darauf ab, die Architektur von LSTMs zu vereinfachen und gleichzeitig das Problem des verschwindenden Gradienten anzugehen.
+        \item[-] Weniger Gating- Mechanismen aber dafür Rechenintensiver.
+        \item[-] Haben eine vergleichbare Leistung wie LSTM.
+    \end{itemize}
+	\item Transformer Modelle:
+	\begin{itemize}
+        \item[-] 
+        \item[-] 
+    \end{itemize}
+\end{itemize}
 
 
-\subsection{Subsection 1.2}
+\subsection{N-Gramme}
 
 
 \clearpage
