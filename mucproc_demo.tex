@@ -42,7 +42,7 @@ Bekannte Modelle sind:
 \begin{itemize}
 	\item RNN (Rekurrente Neuronale Netze)
 	\begin{itemize}
-        \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell kohärente Sätze gebildet werden.
+        \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell, kohärente Sätze gebildet werden.
         \item[-] Verschwindender Gradient. Abhängigkeiten in großer Entfernung können nicht mehr erkannt werden.
     \end{itemize}
 	\item LSTM (Long Short-Term Memory)
@@ -58,13 +58,53 @@ Bekannte Modelle sind:
     \end{itemize}
 	\item Transformer Modelle:
 	\begin{itemize}
-        \item[-] Test
-        \item[-] 
+		\item[-] GPT
+		\begin{itemize}
+			\item[-] Im Gegensatz zu RNN benutzen Transformer Selbstaufmerksamkeitsmechanismen.
+			\item[-] Transformatoren verarbeiten Wörter parallel, was zu höherer Effizienz führt.
+		\end{itemize}
+        \item[-] GPT4
+		\begin{itemize}
+			\item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen. 
+			\item[-] Umfangreicher Textkorpus.
+			\item[-] Besonders gut für kohärente und kontextrelevante Texte.
+			\item[-] Kann für Vielzahl von Anwendungen verwendet werden, z.B.: Code-generierung. 
+		\end{itemize}
     \end{itemize}
 \end{itemize}
 
 
+Im Voraus sollten bei diesen Modellen sowohl Kenntnisse über Sprache im Allgemeinen bestehen, sowie über die jeweilige Kommunikationssituation. Die oben genannten Modelle bestehen zudem aus mehreren Teilmodellen. Meist sind das Vokabular, Häufigkeiten und Grammatik. Die oben genannten Modelle treten zudem in Kombination auf.
+Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen: 
+
+\begin{itemize}
+	\item Regelbasierte Systeme
+	\begin{itemize}
+		\item[-] Vordefinierte Sprachregeln, Vorlagen.
+		\item[-] Fehlende Fähigkeit kontextrelevante dynamische Text zu generieren.
+	\end{itemize}
+	\item Vorlagenbasierte Systeme
+	\begin{itemize}
+		\item[-] Vordefinierte Vorlagen, die mit dynamischen Inhalten gefüllt werden.
+		\item[-] Gewisses Maß an Anpassung möglich (Grammatik).
+		\item[-] Kein einzigartiger kreativer Text. 
+	\end{itemize}
+	\item Statistische Sprachmodelle
+	\begin{itemize}
+		\item[-] N-Gramme, Markov (HMM)
+		\item[-] Mangel an semantischem Verständnis und Schwierigkeiten kontextrelevante Inhalte zu erzeugen.
+	\end{itemize}
+	\item Neuronale Sprachmodelle
+	\begin{itemize}
+		\item[-] Dialoge sind möglich und es können sowohl Kontextrelevante als auch Kohärente Teile erkannt werden.
+		\item[-] Siehe RNN, LSTM, GRU, GPT 
+	\end{itemize}
+\end{itemize}
+
 \subsection{N-Gramme}
+N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes. Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme), über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme. Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse (Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
+
+\noindent Typische N-Gramme:
 
 
 \clearpage
