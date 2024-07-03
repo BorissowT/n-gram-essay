@@ -6,6 +6,11 @@
 \usepackage{hyperref}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+
+\definecolor{mytransparentcolor}{rgb}{0.8,0.2,0.3} % Beispiel RGB-Farbe
 
 \title{N-gram Language Models}
 \author{
@@ -104,7 +109,74 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 \subsection{N-Gramme}
 N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes. Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme), über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme. Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse (Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
 
-\noindent Typische N-Gramme:
+\noindent \textbf{Typische N-Gramme:}
+\\
+\\
+\\
+Unigramm:
+\\
+$N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
+			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut is}} 
+			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut a}} 
+			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut sentence}}.
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\coordinate (A) at (0,0.4);
+				\coordinate (B) at (3,1);
+				\coordinate (C) at (0,-0.2);
+				\coordinate (D) at (3,-1);
+				\draw (A) -- (B);
+				\draw (C) -- (D);
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\node at (2,0.9) {This};
+				\node at (2,0.3) {is};
+				\node at (2,-0.3) {a};
+				\node at (2,-0.9) {sentence};
+			\end{tikzpicture}
+\\
+\\
+\\
+Bigramm:
+\\
+$N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}} 
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\coordinate (A) at (0,0.4);
+				\coordinate (B) at (3,1);
+				\coordinate (C) at (0,-0.2);
+				\coordinate (D) at (3,-1);
+				\draw (A) -- (B);
+				\draw (C) -- (D);
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\node at (2,0.9) {This is};
+				\node at (2,0.3) {is a};
+				\node at (2,-0.3) {a sentence};
+			\end{tikzpicture}
+			\noindent
+\\
+\\
+\\
+Trigramm:
+\\
+$N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.3cm][0.05cm]{\strut a}} 
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.3cm][0.05cm]{\strut sentence}}.
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\coordinate (A) at (0,0.4);
+				\coordinate (B) at (3,1);
+				\coordinate (C) at (0,-0.2);
+				\coordinate (D) at (3,-1);
+				\draw (A) -- (B);
+				\draw (C) -- (D);
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline={(current bounding box.center)}]
+				\node at (2,0.9) {This is};
+				\node at (2,0.3) {is a};
+				\node at (2,-0.3) {a sentence};
+			\end{tikzpicture}
+			\noindent
 
 
 \clearpage
