@@ -110,14 +110,18 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 \end{itemize}
 
 \subsection{N-Gramme}
-N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes. Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme), über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme. Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse (Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
-
-\noindent \textbf{Typische N-Gramme:}
-\\
-\\
-\\
-Unigramm:
-\\
+N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes. 
+Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme), 
+über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme. 
+Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller 
+Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem 
+Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der 
+Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse 
+(Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
+\vspace{1cm}
+\\\noindent \textbf{Typische N-Gramme:}
+\vspace{1cm}
+\\Unigramm:
 $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
 			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}} 
 			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}} 
@@ -136,11 +140,8 @@ $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
 				\node at (2,-0.3) {a};
 				\node at (2,-0.9) {sentence};
 			\end{tikzpicture}
-\\
-\\
-\\
-Bigramm:
-\\
+\vspace{1cm}
+\\Bigramm:
 $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}} 
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
@@ -157,11 +158,8 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 				\node at (2,0.3) {is a};
 				\node at (2,-0.3) {a sentence};
 			\end{tikzpicture}
-\\
-\\
-\\
-Trigramm:
-\\
+\vspace{1cm}
+\\Trigramm:
 $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -178,9 +176,8 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 			\end{tikzpicture}
 \clearpage
 
-\noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle:
-\\
-\\
+\noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle:\\
+
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
 	
 	\tikzstyle{every state}=[fill=white,draw=black,text=black]
@@ -197,9 +194,8 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 			(C) edge [loop above] node {1} (C);
 
 \end{tikzpicture}
-\\
-\\
-Grundsätzlich haben wir es mit einer Bedingten Wahrscheinlichkeit zu tun die wie folgend aussieht:
+
+\noindent Grundsätzlich haben wir es mit einer Bedingten Wahrscheinlichkeit zu tun die wie folgend aussieht:\\
 
 \begin{equation}
 	\begin{split}
