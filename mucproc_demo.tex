@@ -9,6 +9,9 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage{pgf}
+
 
 \definecolor{mytransparentcolor}{rgb}{0.8,0.2,0.3} % Beispiel RGB-Farbe
 
@@ -116,9 +119,9 @@ N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmen
 Unigramm:
 \\
 $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
-			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut is}} 
-			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut a}} 
-			\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut sentence}}.
+			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}} 
+			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}} 
+			\fbox{\raisebox{0pt}[0.6cm][0.35cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\coordinate (A) at (0,0.4);
 				\coordinate (B) at (3,1);
@@ -160,9 +163,8 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 \\
 Trigramm:
 \\
-$N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.3cm][0.05cm]{\strut a}} 
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.3cm][0.05cm]{\strut sentence}}.
+$N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\coordinate (A) at (0,0.4);
 				\coordinate (B) at (3,1);
@@ -172,11 +174,32 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 				\draw (C) -- (D);
 			\end{tikzpicture}
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\node at (2,0.9) {This is};
-				\node at (2,0.3) {is a};
-				\node at (2,-0.3) {a sentence};
+				\node at (2,0.9) {This is a};
+				\node at (2,0.3) {is a sentence};
 			\end{tikzpicture}
 			\noindent
+\\
+\\
+\\
+\\
+Die daraus folgende typische Markov Annahme:
+\\
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
+	
+	\tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+	\node[initial,state] (A)                    {$Z_1$};
+	\node[state]         (B) [below right of=A] {$Z_2$};
+	\node[state]         (C) [above right of=B] {$Z_3$};
+
+	\path 	(A) edge [loop above] node {0.3} (A)
+			(B) edge node {0.3} (A)
+			(A) edge node {0.7} (B)
+			(B) edge [loop below] node {0.3}
+			(B)	edge              node {0.4} (C)
+			(C) edge [loop above] node {1} (C);
+
+\end{tikzpicture}
 
 
 \clearpage
