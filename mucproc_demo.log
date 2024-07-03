@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.2)  3 JUL 2024 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.2)  3 JUL 2024 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -519,6 +519,7 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 Package hyperref Info: Link coloring OFF on input line 28.
+ (mucproc_demo.out) (mucproc_demo.out)
 \@outlinefile=\write4
 \openout4 = `mucproc_demo.out'.
 
@@ -583,8 +584,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  (C:\Users\felix\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-No file mucproc_demo.toc.
+) (mucproc_demo.toc)
 \tf@toc=\write5
 \openout5 = `mucproc_demo.toc'.
 
@@ -629,259 +629,187 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
+Underfull \hbox (badness 10000) in paragraph at lines 115--179
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--199
-
- []
-
-
-Overfull \hbox (27.93773pt too wide) in paragraph at lines 115--199
-\OT1/cmr/m/n/12 Die da-raus fol-gende typ-is-che Markov An-nahme als Prozess-di-a-gramm und []Ubergangstabelle: 
- []
-
-
-c:/Users/felix/GitHub/n-gram-essay/mucproc_demo.tex:201: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \\
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-c:/Users/felix/GitHub/n-gram-essay/mucproc_demo.tex:202: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.202 \\
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-c:/Users/felix/GitHub/n-gram-essay/mucproc_demo.tex:203: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.203 \noindent
-                Ganz grundsätzlich haben wir es hier also mit einer Bedingt...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 
 
 [4]
-
-[5]
-
-LaTeX Warning: Citation `jurafsky2023' on page 6 undefined on input line 208.
-
-
-LaTeX Warning: Citation `dremio2023' on page 6 undefined on input line 230.
+Overfull \hbox (27.93773pt too wide) in paragraph at lines 181--203
+\OT1/cmr/m/n/12 Die da-raus fol-gende typ-is-che Markov An-nahme als Prozess-di-a-gramm und []Ubergangstabelle: 
+ []
 
 
-LaTeX Warning: Citation `foster2020' on page 6 undefined on input line 236.
+Underfull \hbox (badness 10000) in paragraph at lines 181--203
+
+ []
 
 
-Overfull \hbox (5.70415pt too wide) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 181--203
+
+ []
+
+
+Overfull \hbox (17.91931pt too wide) in paragraph at lines 213--234
+\OT1/cmr/m/n/12 lichkeiten eige-setzt wer-den. Dazu z^^?ahlt eben-falls die zus^^?atzlich im Fol-gen-den beschriebene
+ []
+
+
+
+[5
+
+]
+
+[6]
+Overfull \hbox (5.70415pt too wide) in paragraph at lines 266--267
 \OT1/cmr/m/n/12 Wert zu ad-dieren, bevor wir sie zu Wahrschein-lichkeiten nor-mal-isieren. Alle Z^^?ahlungen,
  []
 
 
 
-[6
+[7
 
 ]
-<statics/Borisov/1.PNG, id=45, 190.46156pt x 33.87656pt>
+<statics/Borisov/1.PNG, id=127, 190.46156pt x 33.87656pt>
 File: statics/Borisov/1.PNG Graphic file (type png)
 <use statics/Borisov/1.PNG>
-Package pdftex.def Info: statics/Borisov/1.PNG  used on input line 240.
+Package pdftex.def Info: statics/Borisov/1.PNG  used on input line 270.
 (pdftex.def)             Requested size: 130.08731pt x 23.13861pt.
-<statics/Borisov/2.PNG, id=47, 205.5178pt x 27.85406pt>
+<statics/Borisov/2.PNG, id=129, 205.5178pt x 27.85406pt>
 File: statics/Borisov/2.PNG Graphic file (type png)
 <use statics/Borisov/2.PNG>
-Package pdftex.def Info: statics/Borisov/2.PNG  used on input line 245.
+Package pdftex.def Info: statics/Borisov/2.PNG  used on input line 275.
 (pdftex.def)             Requested size: 173.44534pt x 23.50731pt.
-<statics/Borisov/3.PNG, id=48, 401.24907pt x 63.98906pt>
+<statics/Borisov/3.PNG, id=130, 401.24907pt x 63.98906pt>
 File: statics/Borisov/3.PNG Graphic file (type png)
 <use statics/Borisov/3.PNG>
-Package pdftex.def Info: statics/Borisov/3.PNG  used on input line 250.
+Package pdftex.def Info: statics/Borisov/3.PNG  used on input line 280.
 (pdftex.def)             Requested size: 260.17464pt x 41.49376pt.
-
-
-LaTeX Warning: Citation `maucher2022' on page 7 undefined on input line 253.
-
-<statics/Borisov/4.PNG, id=49, 227.34938pt x 53.44969pt>
+<statics/Borisov/4.PNG, id=132, 227.34938pt x 53.44969pt>
 File: statics/Borisov/4.PNG Graphic file (type png)
 <use statics/Borisov/4.PNG>
-Package pdftex.def Info: statics/Borisov/4.PNG  used on input line 257.
+Package pdftex.def Info: statics/Borisov/4.PNG  used on input line 287.
 (pdftex.def)             Requested size: 173.44534pt x 40.77713pt.
 
-LaTeX Warning: Citation `jurafsky2023' on page 7 undefined on input line 260.
-
-
-Overfull \hbox (11.10457pt too wide) in paragraph at lines 265--266
+Overfull \hbox (11.10457pt too wide) in paragraph at lines 295--296
 []\OT1/cmr/m/n/12 Der er-ste Schritt der Berech-nung besteht darin, die Wahrschein-lichkeit abzusch^^?atzen,
  []
 
-<statics/Borisov/5.PNG, id=50, 167.12437pt x 45.16875pt>
+<statics/Borisov/5.PNG, id=134, 167.12437pt x 45.16875pt>
 File: statics/Borisov/5.PNG Graphic file (type png)
 <use statics/Borisov/5.PNG>
-Package pdftex.def Info: statics/Borisov/5.PNG  used on input line 267.
+Package pdftex.def Info: statics/Borisov/5.PNG  used on input line 297.
 (pdftex.def)             Requested size: 130.08731pt x 35.16116pt.
 
 
-[7 <./statics/Borisov/1.PNG> <./statics/Borisov/2.PNG> <./statics/Borisov/3.PNG> <./statics/Borisov/4.PNG>]
-<statics/Borisov/6.PNG, id=63, 131.74219pt x 54.9553pt>
+[8 <./statics/Borisov/1.PNG> <./statics/Borisov/2.PNG> <./statics/Borisov/3.PNG> <./statics/Borisov/4.PNG>]
+<statics/Borisov/6.PNG, id=145, 131.74219pt x 54.9553pt>
 File: statics/Borisov/6.PNG Graphic file (type png)
 <use statics/Borisov/6.PNG>
-Package pdftex.def Info: statics/Borisov/6.PNG  used on input line 272.
+Package pdftex.def Info: statics/Borisov/6.PNG  used on input line 302.
 (pdftex.def)             Requested size: 86.72267pt x 36.17752pt.
-<statics/Borisov/7.PNG, id=64, 171.64125pt x 57.96657pt>
+<statics/Borisov/7.PNG, id=146, 171.64125pt x 57.96657pt>
 File: statics/Borisov/7.PNG Graphic file (type png)
 <use statics/Borisov/7.PNG>
-Package pdftex.def Info: statics/Borisov/7.PNG  used on input line 276.
+Package pdftex.def Info: statics/Borisov/7.PNG  used on input line 306.
 (pdftex.def)             Requested size: 130.08731pt x 43.93297pt.
 
-
-LaTeX Warning: Citation `maucher2022' on page 8 undefined on input line 278.
-
-
-LaTeX Warning: Citation `gale1995' on page 8 undefined on input line 278.
-
-
-Overfull \hbox (24.37526pt too wide) in paragraph at lines 281--284
+Overfull \hbox (24.37526pt too wide) in paragraph at lines 311--314
 \OT1/cmr/m/n/12 durch ein n-Gramm niedrigerer Ord-nung zus^^?atzliche Wahrschein-lichkeits-masse hinzugef^^?ugt
  []
 
 
-Overfull \hbox (4.80324pt too wide) in paragraph at lines 281--284
+Overfull \hbox (4.80324pt too wide) in paragraph at lines 311--314
 \OT1/cmr/m/n/12 pliziten Abzin-sungs-fak-tor ben^^?otigen wir eine Funk-tion a, um diese Wahrschein-lichkeits-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--284
+Underfull \hbox (badness 10000) in paragraph at lines 311--314
 
  []
 
 
-Overfull \hbox (35.39876pt too wide) in paragraph at lines 281--284
+Overfull \hbox (35.39876pt too wide) in paragraph at lines 311--314
 \OT1/cmr/m/n/12 wir rekur-siv auf die Katz-Wahrscheinlichkeit f^^?ur das (n-1)-Gramm mit k^^?urzerer Vorgeschichte
  []
 
-<statics/Borisov/8.PNG, id=65, 220.57407pt x 33.87656pt>
+<statics/Borisov/8.PNG, id=149, 220.57407pt x 33.87656pt>
 File: statics/Borisov/8.PNG Graphic file (type png)
 <use statics/Borisov/8.PNG>
-Package pdftex.def Info: statics/Borisov/8.PNG  used on input line 285.
+Package pdftex.def Info: statics/Borisov/8.PNG  used on input line 315.
 (pdftex.def)             Requested size: 173.44534pt x 26.63966pt.
-<statics/Borisov/9.PNG, id=66, 569.87906pt x 108.405pt>
+<statics/Borisov/9.PNG, id=150, 569.87906pt x 108.405pt>
 File: statics/Borisov/9.PNG Graphic file (type png)
 <use statics/Borisov/9.PNG>
-Package pdftex.def Info: statics/Borisov/9.PNG  used on input line 288.
+Package pdftex.def Info: statics/Borisov/9.PNG  used on input line 318.
 (pdftex.def)             Requested size: 303.53267pt x 57.73888pt.
 
 
-[8 <./statics/Borisov/5.PNG> <./statics/Borisov/6.PNG> <./statics/Borisov/7.PNG>]
-<statics/Borisov/10.PNG, id=76, 595.47469pt x 72.27pt>
+[9 <./statics/Borisov/5.PNG> <./statics/Borisov/6.PNG> <./statics/Borisov/7.PNG>]
+<statics/Borisov/10.PNG, id=160, 595.47469pt x 72.27pt>
 File: statics/Borisov/10.PNG Graphic file (type png)
 <use statics/Borisov/10.PNG>
-Package pdftex.def Info: statics/Borisov/10.PNG  used on input line 295.
+Package pdftex.def Info: statics/Borisov/10.PNG  used on input line 325.
 (pdftex.def)             Requested size: 346.89731pt x 42.10077pt.
-<statics/Borisov/11.PNG, id=77, 515.67656pt x 68.50594pt>
+<statics/Borisov/11.PNG, id=161, 515.67656pt x 68.50594pt>
 File: statics/Borisov/11.PNG Graphic file (type png)
 <use statics/Borisov/11.PNG>
-Package pdftex.def Info: statics/Borisov/11.PNG  used on input line 301.
+Package pdftex.def Info: statics/Borisov/11.PNG  used on input line 331.
 (pdftex.def)             Requested size: 346.89731pt x 46.08585pt.
 
 
-LaTeX Warning: Citation `roshmita2023' on page 9 undefined on input line 307.
+[10 <./statics/Borisov/8.PNG> <./statics/Borisov/9.PNG> <./statics/Borisov/10.PNG> <./statics/Borisov/11.PNG>]
 
+[11]
 
-LaTeX Warning: Citation `clarkGiorgoloLappin' on page 9 undefined on input line 308.
-
-
-LaTeX Warning: Citation `babukumar2010' on page 9 undefined on input line 311.
-
-
-
-[9 <./statics/Borisov/8.PNG> <./statics/Borisov/9.PNG> <./statics/Borisov/10.PNG> <./statics/Borisov/11.PNG>]
-
-[10]
-
-[11
+[12
 
 ] (mucproc_demo.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `mucproc_demo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `mucproc_demo.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  E126BD7FB72FFFD0FABD7F3F54813733;2563.
+Package rerunfilecheck Info: File `mucproc_demo.out' has not changed.
+(rerunfilecheck)             Checksum: E126BD7FB72FFFD0FABD7F3F54813733;2563.
  ) 
 Here is how much of TeX's memory you used:
- 23972 strings out of 473904
- 477072 string characters out of 5726601
- 1940908 words of memory out of 5000000
- 46447 multiletter control sequences out of 15000+600000
+ 24001 strings out of 473904
+ 477688 string characters out of 5726601
+ 1938908 words of memory out of 5000000
+ 46467 multiletter control sequences out of 15000+600000
  568293 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,87p,931b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\felix\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mucproc_demo.pdf (11 pages, 226839 bytes).
+ 83i,15n,87p,931b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\felix\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on mucproc_demo.pdf (12 pages, 261960 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
