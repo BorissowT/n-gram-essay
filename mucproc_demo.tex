@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{tikz}
+\usepackage{array}
 \usetikzlibrary{arrows,automata}
 \usepackage{pgf}
 
@@ -178,24 +179,42 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 
 \noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle:\\
 
-\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
-	
-	\tikzstyle{every state}=[fill=white,draw=black,text=black]
+\begin{minipage}{0.50\textwidth}
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
+		
+		\tikzstyle{every state}=[fill=white,draw=black,text=black]
 
-	\node[initial,state] (A)                    {$Z_1$};
-	\node[state]         (B) [below right of=A] {$Z_2$};
-	\node[state]         (C) [above right of=B] {$Z_3$};
+		\node[initial,state] (A)                    {$Z_1$};
+		\node[state]         (B) [below right of=A] {$Z_2$};
+		\node[state]         (C) [above right of=B] {$Z_3$};
 
-	\path 	(A) edge [loop above] node {0.3} (A)
-			(B) edge node {0.3} (A)
-			(A) edge node {0.7} (B)
-			(B) edge [loop below] node {0.3}
-			(B)	edge              node {0.4} (C)
-			(C) edge [loop above] node {1} (C);
+		\path 	(A) edge [loop above] node {0.3} (A)
+				(B) edge node {0.3} (A)
+				(A) edge node {0.7} (B)
+				(B) edge [loop below] node {0.3}
+				(B)	edge              node {0.4} (C)
+				(C) edge [loop above] node {1} (C);
 
-\end{tikzpicture}
+	\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+	\begin{tabular}{ m{1cm} | m{1cm}| m{1cm} | m{1cm} } 
+		& $Z_1$ & $Z_2$ & $Z_3$\\ 
+		\hline
+		$Z_1$ & 0.3 & 0.3 & 0\\ 
+		\hline
+		$Z_2$ & 0.7 & 0.3 & 0\\ 
+		\hline
+		$Z_3$ & 0 & 0.4 & 1\\
+		\hline
+		$=$ & 1 & 1 & 1\\
+	\end{tabular}
+\end{minipage}
 
-\noindent Grundsätzlich haben wir es mit einer Bedingten Wahrscheinlichkeit zu tun die wie folgend aussieht:\\
+\\[1cm]
+
+\noindent Grundsätzlich haben wir es mit bedingten Wahrscheinlichkeiten zu tun die wie folgend lauten:
+\\
 
 \begin{equation}
 	\begin{split}
