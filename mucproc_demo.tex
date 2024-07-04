@@ -18,11 +18,11 @@
 
 \title{N-gram Language Models}
 \author{
-  Felix Pötzsch\\
+  Felix Pötzsch, 580106\\
   \and
   Borisov Timofei \\
   \and
-  Simon \\
+  Simon Furitsch\\
 }
 \date{\today}
 
@@ -119,10 +119,10 @@ Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die
 Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der 
 Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse 
 (Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
-\vspace{1cm}
-\\\noindent \textbf{Typische N-Gramme:}
-\vspace{1cm}
-\\Unigramm:
+
+\noindent Typische N-Gramme:
+
+Unigramm:
 $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
 			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}} 
 			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}} 
@@ -140,9 +140,9 @@ $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
 				\node at (2,0.3) {is};
 				\node at (2,-0.3) {a};
 				\node at (2,-0.9) {sentence};
-			\end{tikzpicture}
-\vspace{1cm}
-\\Bigramm:
+			\end{tikzpicture}\\[0.5cm]
+
+Bigramm:
 $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}} 
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
@@ -158,10 +158,10 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
 				\node at (2,0.9) {This is};
 				\node at (2,0.3) {is a};
 				\node at (2,-0.3) {a sentence};
-			\end{tikzpicture}
-\vspace{1cm}
-\\Trigramm:
-$N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
+			\end{tikzpicture}\\[0.5cm]
+
+Trigramm:
+$N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\coordinate (A) at (0,0.4);
@@ -174,10 +174,10 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\node at (2,0.9) {This is a};
 				\node at (2,0.3) {is a sentence};
-			\end{tikzpicture}
-\clearpage
+			\end{tikzpicture}\\[1cm]
 
-\noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle:\\
+
+\noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle würde dazu folgend aussehen:\\
 
 \begin{minipage}{0.50\textwidth}
 	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
@@ -209,12 +209,9 @@ $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 		\hline
 		$=$ & 1 & 1 & 1\\
 	\end{tabular}
-\end{minipage}
+\end{minipage}\\[1cm]
 
-\\[1cm]
-
-\noindent Grundsätzlich haben wir es mit bedingten Wahrscheinlichkeiten zu tun die wie folgend lauten:
-\\
+\noindent Grundsätzlich haben wir es mit bedingten Wahrscheinlichkeiten zu tun die wie folgt lauten:\\
 
 \begin{equation}
 	\begin{split}
@@ -247,7 +244,7 @@ Nullwahrscheinlichkeiten und niedrigen Wahrscheinlichkeiten eigesetzt werden. Da
 zusätzlich im Folgenden beschriebene Perplexität als Evaluationstechnik, um auf \textit{Back Off Words}, also 
 Wörter, auf welche ausgewichen werden kann, zu kommen.
 
-\clearpage
+
 \section{Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}
 \subsection{Was ist un-seen N-Grams?}
 Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "zero probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
