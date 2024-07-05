@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  5 JUL 2024 09:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.8)  5 JUL 2024 10:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -525,32 +525,56 @@ Package babel Info: Making " an active character on input line 122.
 ))) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\babel-ngerman.tex
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
+) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count314
+\lst@gtempboxa=\box95
+\lst@token=\toks41
+\lst@length=\count315
+\lst@currlwidth=\dimen275
+\lst@column=\count316
+\lst@pos=\count317
+\lst@lostspace=\dimen276
+\lst@width=\dimen277
+\lst@newlines=\count318
+\lst@lineno=\count319
+\lst@maxwidth=\dimen278
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count320
+\lst@skipnumbers=\count321
+\lst@framebox=\box96
+) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
-\l__pdf_internal_box=\box95
+\l__color_backend_stack_int=\count322
+\l__pdf_internal_box=\box97
 ) (mucproc_demo.aux)
 \openout1 = `mucproc_demo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-Package hyperref Info: Link coloring OFF on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+Package hyperref Info: Link coloring OFF on input line 57.
  (mucproc_demo.out) (mucproc_demo.out)
 \@outlinefile=\write4
 \openout4 = `mucproc_demo.out'.
@@ -592,34 +616,29 @@ Package hyperref Info: Link coloring OFF on input line 30.
 
 (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
-\scratchdimen=\dimen275
-\scratchbox=\box96
-\nofMPsegments=\count316
-\nofMParguments=\count317
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count318
-\MPscratchDim=\dimen276
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count323
+\scratchdimen=\dimen279
+\scratchbox=\box98
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen280
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks43
 ) (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+\c@lstlisting=\count329
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
  (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
  (C:\Users\tim\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (mucproc_demo.toc [1
@@ -631,119 +650,136 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [2] [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 121--129
+Underfull \hbox (badness 10000) in paragraph at lines 148--156
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 132--151
+Underfull \hbox (badness 10000) in paragraph at lines 159--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--169
+Underfull \hbox (badness 10000) in paragraph at lines 179--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--185
+Underfull \hbox (badness 10000) in paragraph at lines 197--212
 
  []
 
 
-Overfull \hbox (24.67387pt too wide) in paragraph at lines 187--188
+Overfull \hbox (24.67387pt too wide) in paragraph at lines 214--215
 \OT1/cmr/m/n/12 Die dar-aus fol-gen-de ty-pi-sche Mar-kov An-nah-me als Pro-zess-dia-gramm und []Ubergangstabelle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--220
+Underfull \hbox (badness 10000) in paragraph at lines 216--247
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
 [6]
-Overfull \hbox (3.27625pt too wide) in paragraph at lines 285--286
+Overfull \hbox (3.27625pt too wide) in paragraph at lines 312--313
 \OT1/cmr/m/n/12 Wert zu ad-die-ren, be-vor wir sie zu Wahr-schein-lich-kei-ten nor-ma-li-sie-ren. Al-le Z[]ahlungen,
  []
 
 [7]
-<statics/Borisov/1.PNG, id=127, 190.46156pt x 33.87656pt>
+<statics/Borisov/1.PNG, id=188, 190.46156pt x 33.87656pt>
 File: statics/Borisov/1.PNG Graphic file (type png)
 <use statics/Borisov/1.PNG>
-Package pdftex.def Info: statics/Borisov/1.PNG  used on input line 289.
+Package pdftex.def Info: statics/Borisov/1.PNG  used on input line 316.
 (pdftex.def)             Requested size: 130.08731pt x 23.13861pt.
-<statics/Borisov/2.PNG, id=129, 205.5178pt x 27.85406pt>
+<statics/Borisov/2.PNG, id=190, 205.5178pt x 27.85406pt>
 File: statics/Borisov/2.PNG Graphic file (type png)
 <use statics/Borisov/2.PNG>
-Package pdftex.def Info: statics/Borisov/2.PNG  used on input line 294.
+Package pdftex.def Info: statics/Borisov/2.PNG  used on input line 321.
 (pdftex.def)             Requested size: 173.44534pt x 23.50731pt.
-<statics/Borisov/3.PNG, id=130, 401.24907pt x 63.98906pt>
+<statics/Borisov/3.PNG, id=191, 401.24907pt x 63.98906pt>
 File: statics/Borisov/3.PNG Graphic file (type png)
 <use statics/Borisov/3.PNG>
-Package pdftex.def Info: statics/Borisov/3.PNG  used on input line 299.
+Package pdftex.def Info: statics/Borisov/3.PNG  used on input line 326.
 (pdftex.def)             Requested size: 260.17464pt x 41.49376pt.
-<statics/Borisov/4.PNG, id=132, 227.34938pt x 53.44969pt>
+<statics/Borisov/4.PNG, id=193, 227.34938pt x 53.44969pt>
 File: statics/Borisov/4.PNG Graphic file (type png)
 <use statics/Borisov/4.PNG>
-Package pdftex.def Info: statics/Borisov/4.PNG  used on input line 306.
+Package pdftex.def Info: statics/Borisov/4.PNG  used on input line 333.
 (pdftex.def)             Requested size: 173.44534pt x 40.77713pt.
 
-Overfull \hbox (10.84477pt too wide) in paragraph at lines 314--315
+Overfull \hbox (10.84477pt too wide) in paragraph at lines 341--342
 []\OT1/cmr/m/n/12 Der ers-te Schritt der Be-rech-nung be-steht dar-in, die Wahr-schein-lich-keit ab-zusch[]atzen,
  []
 
-<statics/Borisov/5.PNG, id=134, 167.12437pt x 45.16875pt>
+<statics/Borisov/5.PNG, id=195, 167.12437pt x 45.16875pt>
 File: statics/Borisov/5.PNG Graphic file (type png)
 <use statics/Borisov/5.PNG>
-Package pdftex.def Info: statics/Borisov/5.PNG  used on input line 316.
+Package pdftex.def Info: statics/Borisov/5.PNG  used on input line 343.
 (pdftex.def)             Requested size: 130.08731pt x 35.16116pt.
 [8 <./statics/Borisov/1.PNG> <./statics/Borisov/2.PNG> <./statics/Borisov/3.PNG> <./statics/Borisov/4.PNG>]
-<statics/Borisov/6.PNG, id=145, 131.74219pt x 54.9553pt>
+<statics/Borisov/6.PNG, id=206, 131.74219pt x 54.9553pt>
 File: statics/Borisov/6.PNG Graphic file (type png)
 <use statics/Borisov/6.PNG>
-Package pdftex.def Info: statics/Borisov/6.PNG  used on input line 321.
+Package pdftex.def Info: statics/Borisov/6.PNG  used on input line 348.
 (pdftex.def)             Requested size: 86.72267pt x 36.17752pt.
-<statics/Borisov/7.PNG, id=146, 171.64125pt x 57.96657pt>
+<statics/Borisov/7.PNG, id=207, 171.64125pt x 57.96657pt>
 File: statics/Borisov/7.PNG Graphic file (type png)
 <use statics/Borisov/7.PNG>
-Package pdftex.def Info: statics/Borisov/7.PNG  used on input line 325.
+Package pdftex.def Info: statics/Borisov/7.PNG  used on input line 352.
 (pdftex.def)             Requested size: 130.08731pt x 43.93297pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--333
+Underfull \hbox (badness 10000) in paragraph at lines 357--360
 
  []
 
-<statics/Borisov/8.PNG, id=149, 220.57407pt x 33.87656pt>
+<statics/Borisov/8.PNG, id=210, 220.57407pt x 33.87656pt>
 File: statics/Borisov/8.PNG Graphic file (type png)
 <use statics/Borisov/8.PNG>
-Package pdftex.def Info: statics/Borisov/8.PNG  used on input line 334.
+Package pdftex.def Info: statics/Borisov/8.PNG  used on input line 361.
 (pdftex.def)             Requested size: 173.44534pt x 26.63966pt.
-<statics/Borisov/9.PNG, id=150, 569.87906pt x 108.405pt>
+<statics/Borisov/9.PNG, id=211, 569.87906pt x 108.405pt>
 File: statics/Borisov/9.PNG Graphic file (type png)
 <use statics/Borisov/9.PNG>
-Package pdftex.def Info: statics/Borisov/9.PNG  used on input line 337.
+Package pdftex.def Info: statics/Borisov/9.PNG  used on input line 364.
 (pdftex.def)             Requested size: 303.53267pt x 57.73888pt.
 [9 <./statics/Borisov/5.PNG> <./statics/Borisov/6.PNG> <./statics/Borisov/7.PNG>]
-<statics/Borisov/10.PNG, id=160, 595.47469pt x 72.27pt>
+<statics/Borisov/10.PNG, id=221, 595.47469pt x 72.27pt>
 File: statics/Borisov/10.PNG Graphic file (type png)
 <use statics/Borisov/10.PNG>
-Package pdftex.def Info: statics/Borisov/10.PNG  used on input line 344.
+Package pdftex.def Info: statics/Borisov/10.PNG  used on input line 371.
 (pdftex.def)             Requested size: 346.89731pt x 42.10077pt.
-<statics/Borisov/11.PNG, id=161, 515.67656pt x 68.50594pt>
+<statics/Borisov/11.PNG, id=222, 515.67656pt x 68.50594pt>
 File: statics/Borisov/11.PNG Graphic file (type png)
 <use statics/Borisov/11.PNG>
-Package pdftex.def Info: statics/Borisov/11.PNG  used on input line 350.
+Package pdftex.def Info: statics/Borisov/11.PNG  used on input line 377.
 (pdftex.def)             Requested size: 346.89731pt x 46.08585pt.
- [10 <./statics/Borisov/8.PNG> <./statics/Borisov/9.PNG> <./statics/Borisov/10.PNG> <./statics/Borisov/11.PNG>] [11] [12
+ [10 <./statics/Borisov/8.PNG> <./statics/Borisov/9.PNG> <./statics/Borisov/10.PNG> <./statics/Borisov/11.PNG>] [11] [12]
+<statics/Furitsch/table.PNG, id=264, 470.50781pt x 175.40532pt>
+File: statics/Furitsch/table.PNG Graphic file (type png)
+<use statics/Furitsch/table.PNG>
+Package pdftex.def Info: statics/Furitsch/table.PNG  used on input line 436.
+(pdftex.def)             Requested size: 346.89731pt x 129.32416pt.
+ [13 <./statics/Furitsch/table.PNG>]
+<statics/Furitsch/prod_var.png, id=288, 579.66562pt x 88.07906pt>
+File: statics/Furitsch/prod_var.png Graphic file (type png)
+<use statics/Furitsch/prod_var.png>
+Package pdftex.def Info: statics/Furitsch/prod_var.png  used on input line 463.
+(pdftex.def)             Requested size: 346.89731pt x 52.71074pt.
+<statics/Furitsch/log_var.png, id=289, 560.8453pt x 43.66313pt>
+File: statics/Furitsch/log_var.png Graphic file (type png)
+<use statics/Furitsch/log_var.png>
+Package pdftex.def Info: statics/Furitsch/log_var.png  used on input line 469.
+(pdftex.def)             Requested size: 346.89731pt x 27.00623pt.
+ [14 <./statics/Furitsch/prod_var.png> <./statics/Furitsch/log_var.png>] [15] [16] [17
 
 ] (mucproc_demo.aux)
  ***********
@@ -751,20 +787,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `mucproc_demo.out' has not changed.
-(rerunfilecheck)             Checksum: 9E2BC47DC39ED0305A24291F17147D7E;2556.
+(rerunfilecheck)             Checksum: 6D1B592AE4C0E9D1228047B154A4B7C8;4979.
  ) 
 Here is how much of TeX's memory you used:
- 25157 strings out of 474485
- 498994 string characters out of 5744679
- 1945542 words of memory out of 5000000
- 47009 multiletter control sequences out of 15000+600000
- 568293 words of font info for 75 fonts, out of 8000000 for 9000
+ 27033 strings out of 474485
+ 523922 string characters out of 5744679
+ 2037542 words of memory out of 5000000
+ 48807 multiletter control sequences out of 15000+600000
+ 568461 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,15n,87p,978b,975s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\tim\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mucproc_demo.pdf (12 pages, 269829 bytes).
+ 83i,15n,87p,1043b,2015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\tim\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/tim/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on mucproc_demo.pdf (17 pages, 352351 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 
