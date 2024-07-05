@@ -13,17 +13,44 @@
 \usetikzlibrary{arrows,automata}
 \usepackage{pgf}
 \usepackage[ngerman]{babel} % Deutsche Sprache einstellen (neue Rechtschreibung)
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=10pt,
+    breaklines=true,
+    frame=single
+}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{arrows,automata}
+\usepackage{pgf}
+\usepackage[ngerman]{babel} % Deutsche Sprache einstellen (neue Rechtschreibung)
 
 
 \definecolor{mytransparentcolor}{rgb}{0.8,0.2,0.3} % Beispiel RGB-Farbe
 
-\title{N-gram Language Models}
+
+\definecolor{mytransparentcolor}{rgb}{0.8,0.2,0.3} % Beispiel RGB-Farbe
+
+\title{N-Gramm Modell}
 \author{
-  Felix Pötzsch (580106)\\
+  Pötzsch Felix (580106)\\
   \and
   Borisov Timofei (580092) \\
   \and
-  Simon Furitsch\\
+  Furitsch Simon (578153)\\
 }
 \date{\today}
 
@@ -34,12 +61,12 @@
 
 % Abstract
 \begin{abstract}
-	Dies ist ein Überblick zum Thema N-Gramme im Modul 
-	Aktuelle Themen der Informatik im Sommersemester 2024 an der 
+	Dies ist ein Überblick zum Thema N-Gramme im Modul
+	Aktuelle Themen der Informatik im Sommersemester 2024 an der
 	Hochschule für Technik und Wirtschaft Berlin bei Prof. Dr. Tatiana Ermakova.
-	Wir erklären Grundsätzlich was N-Gramme sind, wo sie eingeordnet werden können und wie mit dieser Technik umgegangen werden kann. 
-	Dazu zeigen wir einfache Optimierungen wie Smoothing, Back-Off Wording etc.. 
-	Des weiteren werden wir ein Beispielprogramm aufführen anhand dessen wir nocheinmal 
+	Wir erklären Grundsätzlich was N-Gramme sind, wo sie eingeordnet werden können und wie mit dieser Technik umgegangen werden kann.
+	Dazu zeigen wir einfache Optimierungen wie Smoothing, Back-Off Wording etc..
+	Des weiteren werden wir ein Beispielprogramm aufführen anhand dessen wir nocheinmal
 	die Verwendung von N-Grammen verdeutlichen.
 \end{abstract}
 
@@ -48,11 +75,11 @@
 \clearpage
 
 % Sections
-\section{Einführung}
+\section{Einführung (Pötzsch Felix)}
 
 \subsection{Sprachmodelle}
-Sprachmodelle sind der Versuch beispielsweise natürliche Sprache als mathematisches 
-Modell darstellen zu können. Ihnen liegt meist ein stochastischer Prozess zugrunde. 
+Sprachmodelle sind der Versuch beispielsweise natürliche Sprache als mathematisches
+Modell darstellen zu können. Ihnen liegt meist ein stochastischer Prozess zugrunde.
 Bekannte Modelle sind:
 
 \begin{itemize}
@@ -81,17 +108,17 @@ Bekannte Modelle sind:
 		\end{itemize}
         \item[-] GPT4
 		\begin{itemize}
-			\item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen. 
+			\item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen.
 			\item[-] Umfangreicher Textkorpus.
 			\item[-] Besonders gut für kohärente und kontextrelevante Texte.
-			\item[-] Kann für Vielzahl von Anwendungen verwendet werden, z.B.: Code-generierung. 
+			\item[-] Kann für Vielzahl von Anwendungen verwendet werden, z.B.: Code-generierung.
 		\end{itemize}
     \end{itemize}
 \end{itemize}
 
 
 Im Voraus sollten bei diesen Modellen sowohl Kenntnisse über Sprache im Allgemeinen bestehen, sowie über die jeweilige Kommunikationssituation. Die oben genannten Modelle bestehen zudem aus mehreren Teilmodellen. Meist sind das Vokabular, Häufigkeiten und Grammatik. Die oben genannten Modelle treten zudem in Kombination auf.
-Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen: 
+Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 
 \begin{itemize}
 	\item Regelbasierte Systeme
@@ -103,7 +130,7 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 	\begin{itemize}
 		\item[-] Vordefinierte Vorlagen, die mit dynamischen Inhalten gefüllt werden.
 		\item[-] Gewisses Maß an Anpassung möglich (Grammatik).
-		\item[-] Kein einzigartiger kreativer Text. 
+		\item[-] Kein einzigartiger kreativer Text.
 	\end{itemize}
 	\item Statistische Sprachmodelle
 	\begin{itemize}
@@ -113,26 +140,26 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 	\item Neuronale Sprachmodelle
 	\begin{itemize}
 		\item[-] Dialoge sind möglich und es können sowohl Kontextrelevante als auch Kohärente Teile erkannt werden.
-		\item[-] Siehe RNN, LSTM, GRU, GPT 
+		\item[-] Siehe RNN, LSTM, GRU, GPT
 	\end{itemize}
 \end{itemize}
 
 \subsection{N-Gramme}
-N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes. 
-Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme), 
-über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme. 
-Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller 
-Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem 
-Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der 
-Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse 
+N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes.
+Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme),
+über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme.
+Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller
+Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem
+Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der
+Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse
 (Beurteilung), Spracherkennung (Audioanwendungen) und Handschrifterkennung.\\
 
 \noindent Typische N-Gramme:
 
 Unigramm:
 $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
-			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}} 
-			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}} 
+			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}}
+			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}}
 			\fbox{\raisebox{0pt}[0.6cm][0.35cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\coordinate (A) at (0,0.4);
@@ -151,7 +178,7 @@ $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
 
 Bigramm:
 $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}} 
+			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}}
 			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
 			\begin{tikzpicture}[baseline={(current bounding box.center)}]
 				\coordinate (A) at (0,0.4);
@@ -188,7 +215,7 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 
 \begin{minipage}{0.50\textwidth}
 	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm, semithick]
-		
+
 		\tikzstyle{every state}=[fill=white,draw=black,text=black]
 
 		\node[initial,state] (A)                    {$Z_1$};
@@ -205,12 +232,12 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 	\end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
-	\begin{tabular}{ m{1cm} | m{1cm}| m{1cm} | m{1cm} } 
-		& $Z_1$ & $Z_2$ & $Z_3$\\ 
+	\begin{tabular}{ m{1cm} | m{1cm}| m{1cm} | m{1cm} }
+		& $Z_1$ & $Z_2$ & $Z_3$\\
 		\hline
-		$Z_1$ & 0.3 & 0.3 & 0\\ 
+		$Z_1$ & 0.3 & 0.3 & 0\\
 		\hline
-		$Z_2$ & 0.7 & 0.3 & 0\\ 
+		$Z_2$ & 0.7 & 0.3 & 0\\
 		\hline
 		$Z_3$ & 0 & 0.4 & 1\\
 		\hline
@@ -222,7 +249,7 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 
 \begin{equation}
 	\begin{split}
-	P(t) = P(w_1, w_2,...w_n) &= P(w_1)*P(w_2 \mid w_1)...P(w_n \mid w_1,...w_n-1) \\ 
+	P(t) = P(w_1, w_2,...w_n) &= P(w_1)*P(w_2 \mid w_1)...P(w_n \mid w_1,...w_n-1) \\
 	&= \prod_{i=1}^{n} P(w_i \mid w_1...w_i-1)
 	\end{split}
 \end{equation}
@@ -231,24 +258,24 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 	P(w_1 \mid w_1...w_i-1) = \frac {P(w_1...w_i)}{P(w_1...w_i-1)}
 \end{equation}
 \\
-Also die Wahrscheinlichkeit das Wort 1 eintritt unter der Bedingung, dass ein Paar andere Wörter vorher 
-schon in Kombination aufgetreten sind. Demnach wird Text auf Basis von statistischen Mustern generiert 
-oder anders gesagt: Neu angeordnet. Es mangelt dadurch häufig an semantischem Verständnis. Insbesondere 
-im Zusammenhang mit langfristigeren Abhängigkeiten (Kohärenz) sind Sprachmodelle die rein auf N-Grammen 
-basieren sehr ungeeignet, um Texte zu schreiben. Da lediglich auf Basis einer \textit{Maximum-Likelyhood} Methode 
+Also die Wahrscheinlichkeit das Wort 1 eintritt unter der Bedingung, dass ein Paar andere Wörter vorher
+schon in Kombination aufgetreten sind. Demnach wird Text auf Basis von statistischen Mustern generiert
+oder anders gesagt: Neu angeordnet. Es mangelt dadurch häufig an semantischem Verständnis. Insbesondere
+im Zusammenhang mit langfristigeren Abhängigkeiten (Kohärenz) sind Sprachmodelle die rein auf N-Grammen
+basieren sehr ungeeignet, um Texte zu schreiben. Da lediglich auf Basis einer \textit{Maximum-Likelyhood} Methode
 gearbeitet wird, kann Text nur \textit{nacherzählt} werden aber nicht generiert.\\
-Es folgen nun ein paar typischen Eigenheiten von N-Grammen. Einem Totalversagen entgegenzuwirken, muss 
-zunächst die Wahl eines geeigneten N priorisiert werden. Denn auch wenn ein geeigneter (Text-) Korpus 
-gut gewählt wurde kann es zu \textit{Unseen N-Grams} kommen. Ebenso wie \textit{Unseen N-Grams} gibt es 
-auch \textit{Unseen/Unknown Words}. Prinzipiell aber sollte gesagt werden, dass auch ein großer oder geeigneter Korpus nicht immer zum 
-Erfolg führt, da auch dort Wortkombinationen oder Wörter \textit{Unseen} sein können (Chomsky, Zipfsches Gesetz). 
-Des Weiteren sollte auf den Underflow bei der Bewertung der Wahrscheinlichkeiten geachtet werden. Dieses 
-Problem führt zum nächsten, denn es müssen nicht nur zu niedrige, sondern auch die vollständigen 
+Es folgen nun ein paar typischen Eigenheiten von N-Grammen. Einem Totalversagen entgegenzuwirken, muss
+zunächst die Wahl eines geeigneten N priorisiert werden. Denn auch wenn ein geeigneter (Text-) Korpus
+gut gewählt wurde kann es zu \textit{Unseen N-Grams} kommen. Ebenso wie \textit{Unseen N-Grams} gibt es
+auch \textit{Unseen/Unknown Words}. Prinzipiell aber sollte gesagt werden, dass auch ein großer oder geeigneter Korpus nicht immer zum
+Erfolg führt, da auch dort Wortkombinationen oder Wörter \textit{Unseen} sein können (Chomsky, Zipfsches Gesetz).
+Des Weiteren sollte auf den Underflow bei der Bewertung der Wahrscheinlichkeiten geachtet werden. Dieses
+Problem führt zum nächsten, denn es müssen nicht nur zu niedrige, sondern auch die vollständigen
 Nullwahrscheinlichkeiten beachtet werden.\\
-Es müssen also vor allem die Informationen in Form der Angepasstheit sowie Auswahl vorab gut gewählt werden 
-sowie die im Folgenden beschrieben Techniken des \textit{Smoothings}, also der Re-evaluation von 
-Nullwahrscheinlichkeiten und niedrigen Wahrscheinlichkeiten eigesetzt werden. Dazu zählt ebenfalls die 
-zusätzlich im Folgenden beschriebene Perplexität als Evaluationstechnik, um auf \textit{Back Off Words}, also 
+Es müssen also vor allem die Informationen in Form der Angepasstheit sowie Auswahl vorab gut gewählt werden
+sowie die im Folgenden beschrieben Techniken des \textit{Smoothings}, also der Re-evaluation von
+Nullwahrscheinlichkeiten und niedrigen Wahrscheinlichkeiten eigesetzt werden. Dazu zählt ebenfalls die
+zusätzlich im Folgenden beschriebene Perplexität als Evaluationstechnik, um auf \textit{Back Off Words}, also
 Wörter, auf welche ausgewichen werden kann, zu kommen.
 
 
@@ -356,14 +383,117 @@ Anschließend:
 \quad Neuronale Netze sind mittlerweile kontextbewusst. Insbesondere mit Architekturen wie LSTM (Long Short-Term Memory) oder Transformer-Modellen können neuronale Netze weitreichende Abhängigkeiten und kontextuelle Informationen über ganze Sätze oder sogar Absätze hinweg erfassen. Sie verfügen über ein automatisches Lernen von Merkmalen während des Trainingsprozesses, wodurch sich der Bedarf an umfangreicher manueller Merkmalstechnik verringert usw.Wir müssen jedoch den Vorteil von N-Grammen anerkennen. Bei kurzen Texten sind N-Gramm-Methoden dem neuronalen Netz überlegen.
 \cite{babukumar2010}
 
-\section{Main Section 3 (SIMON)}
-\subsection{Subsection 3.1}
-Discuss the details of your third main point.
-\subsection{Subsection 3.2}
-Further details and analysis related to your third main point.
+\section{Konkrete Schritte zur Implementierung eines N-Gramm Modells in Pyhton (Furitsch, Simon)}
+\subsection{Datenvorbereitung}
+\quad Die Daten müssen zuerst in ein für das Training geeignetes Format gebracht werden. Hierzu wird der Text zuerst in Kleinbuchstaben konvertiert und die Sonderzeichen und Zahlen werden entfernt. Textfehler, wie Beispielsweiße doppele Leerzeichen werden gemeinsam mir den \textbf{Stoppwörtern} bereinigt
+\subsubsection{Stoppwörter}
+\quad Stoppwörter sind Füllwörter, welche keine richtige Bedeutung für die Textvorhersage habe, ein Beispiel hierfür ist das Wort: „aber“
+\subsubsection{Stemming und Lemming}
+\quad Eine Möglichkeit das Modell anzupassen ist es die Wörter in eine andere Form zu bringen. Dies kann sich sowohl positiv als auch negativ auf das Modell auswirken, hierzu sei aber der Anwendungsfall von Bedeutung. Insbesondere ist hierbei auf das Evaluieren durch die in Kapitel 4.5 genannte \textbf{Perplexität} hingewießen. Diese kann dabei helfen die Auswirkung von Stemmung und Lemming zu ermitteln.
+\\Beim \textbf{Stemming} wird das Wort einfach in seinen Wortstamm gesetzt: aus singen wird sing und aus gehen wird geh
+\\Beim \textbf{Lemming} hingegen wird das Wort in seine Grundform gebracht. aus Häuser wird Haus und aus ging wird gehen
+\subsection{Grundlagen}
+\subsubsection{Bibliothek: NLTK}
+\quad Im Kapitel 4.3 wird für den Code die Bibiothek NLTK verwendet. Natural Language Toolkit ist die populärste Bibliothek in der neurolighuistischen Programmierung. Diese Bibliothek macht unter anderem das Tokenisieren, die Erzeugung von Grams, das importieren verschiedener Textkörper und vieles weiteres zum Einzeiler. Auch in den folgenden Kapiteln werden die Funtionalitäten näher beleuchtet.
+\subsubsection{Tokenisierung}
+\quad Bei der Tokenisierung handelt es sich um die Aufteilung einer Zeichenkette in kleinere Teile. Die für n-Gram meist genutzte Tokenisierungsmethode ist die Tokenisierung in Wörtern da ja auch die Vorhersahe auf Wörtern basiert. Das bedeutet jedes Wort wird ein Token in der Lösungsmenge. Aus „Das ist ein Satz“, wird {„das“,“ist“,“ein“,“satz“}. Diese Menge wird dann verwendet, um die n-Grams zu erzeugen
+\\In \textbf{NLTK} wird der Worttokenisierer mitgeliefert
+\begin{lstlisting}
+def tokenize(text):
+    return nltk.word_tokenize(text.lower())
+\end{lstlisting}
+\subsubsection{Grams erzeugen}
+\quad Nun werden die Tokens verwendet, um n-Gramme zu erzeugen. Die konkrete Zahl des n hängt stark von der Kontextanforderung an das Modell ab. Während niedrige n zum Beispiel Unigram (1-gram) und Biagram (2-gram) nützlich für Wortverbindungen und einen geringen Kontext sind, sind Modelle mit hohen n nützlich für die Schätzung von größeren Sätzen bzw. über einen längeren Kontext hinaus.
+\\In \textbf{NLTK} ist dies wieder ganz einfach
+\begin{lstlisting}
+def getGram(gram, tokens):
+    return list(nltk.ngrams(tokens, gram))
+\end{lstlisting}
+Dies ist eine Methode welche das n und die Tokens übergeben bekommt und daraus das gewünschte Gram erzeugt. Zum Beispiel n=2 alle Biagramme der Tokens. Für die Ermittlung der in Kapitel 4.2.4 genannten bedingten Wahrscheinlichkeiten ist es jedoch auch notwendig die Wahrscheinlichkeiten und somit auch die Grams der darunter liegenden Dimensionen zu ermitteln. Geht man also von n=3 aus sollten alle Unigramme, Biagramme und Triagramme erzeugt werden.
+\begin{lstlisting}
+def getGrams(n, tokens):
+    grams = [[] for _ in range(n)]
+    for i in range(1, n + 1):
+        grams[i - 1] = getGram(i, tokens)
+    return grams
+\end{lstlisting}
+\subsubsection{Bedingte Wahrscheinlichkeiten ermitteln}
+\quad Die Wahrscheinlichkeiten werden nun ermittelt damit das Modell damit die Vorhersage bilden kann.
+\\Dies passiert in zwei Schritten:
+\begin{lstlisting}
+def buildModel(grams):
+    model = defaultdict(lambda: defaultdict(lambda: 0))
+    for gram_list in grams:
+        for gram in gram_list:
+            prefix = gram[:-1]
+            suffix = gram[-1]
+            if prefix:  # Keine () -> Wort predictions
+                model[prefix][suffix] += 1
+    return model
+\end{lstlisting}
+Hier wird das Model einfach in einem zweidimensionalen Dictionary gespeichert. Der Schlüssel der ersten Dimension ist der Prefix, also alles bis auf das letzte Wort. Die zweite Dimension ist der Suffix, also das letze Wort. Der Wert dahinter ist die Anzahl wie oft der Suffix auf den Prefix gefolgt ist.
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{statics/Furitsch/table.PNG}
+\end{center}
+\begin{lstlisting}
+def convertToProbabilities(model):
+    for prefix in model:
+        total_count = sum(model[prefix].values())
 
-\section{Conclusion}
-Summarize the main points discussed in your essay and provide your final thoughts.
+        for suffix in model[prefix]:
+            model[prefix][suffix] /= total_count
+\end{lstlisting}
+Hier wird nun ermittelt wie viel mögliche Suffixe es für einen Prefix gibt. Anschließend wird das Vorkommen der einzelnen Suffixe geteilt durch die Anzahl aller Suffixe denn das liefert uns die benötigten bedingten Wahrscheinlichkeiten.
+\subsubsection{Vorhersage}
+\begin{lstlisting}
+def predict(model, prefix):
+    if prefix in model:
+        possible_words = model[prefix]
+        return max(possible_words, key=possible_words.get)
+\end{lstlisting}
+Es wird einfach ein gegebener Prefix übergeben, dann wird im Modell geschaut ob ein Suffix dafür existiert, falls dies der Fall ist wird der Suffix mit der höchsten Wahrscheinlichkeit zurück gegeben.
+\subsection{Code}
+Der weitere Code also alle Hilfsmethoden und die Programmschleife können Sie unter folgendem Link abrufen\\
+https://github.com/println4debug/n-gram
+\subsection{Evaluierung eines N-Gramm Modells}
+\quad Um nun zu ermitteln, wie gut unser Modell arbeitet, können wir einfach schauen wie gut das Modell auf unvorhergesehene Inputs reagiert. Wenn wir aber genauer evaluieren möchten bietet es sich an einen Testsatz zu verwenden und zu schauen wie wahrscheinlich es ist dass das Modell diesen Satz vorhersagen kann. Für dieses Verfahren wollen wir also eine Metrik, die diesen Zustand numerisch zusammenfasst.
+\subsubsection{Perplexität}
+Die Perplexität ist das wichtigste Maß, um die Qualität eines n-Gram Modells zu beschreiben. Sie ist definiert durch
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{statics/Furitsch/prod_var.png}
+\end{center}
+Es werden also die Wahrscheinlichkeiten aller Präfix/Suffix Kombinationen des Testsatzes in ein Produkt umgewandelt und dieses wird durch den negativen Durchschnitt poteziert.
+Doch diese Variante bringt einige Probleme mit sich. Zum einen können ohne die Verwendung von Smoothing Techniken Nullwahrscheinlichkeiten mit in das Produkt einfließen was das Peodukt in jedem Fall 0 macht. Außerdem ist diese Variante unstabil bei sehr vielen sehr kleinen Werten da der Endwert dadurch immer kleiner wird.
+Deshalb gibt es eine äquivalente Umformung
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{statics/Furitsch/log_var.png}
+\end{center}
+Es werden alle ermittelten Wahrscheinlichkeiten logarithmiert, anschließend summiert, durch den negativen Wert der Anzahl der Wahrscheinlichkeitselementmenge geteilt. Dieser Wert wird in e-Funktion gegeben um anschließend einen endgültigen Wert zu bringen. Je niedriger dieser ist, umso besser konnte der Testsatz von dem Modell verhergesagt werden.\\ Das Logarithmieren dient dazu, vor allem sehr kleine Zahlen wieder größer zu skalieren, um mit ihnen besser arbeiten zu können. Da das Logarithmieren eine monotone Transformation ist, das bedeutet der Wert wird zwar verändert aber sein Verhältnis zu den anderen Werten wird nicht verändert. Durch die Logarithmusgesetzte wissen wir dass wir das Produkt nun in Summen umwandeln können und durch die E-Funtion machen wird das Logarithmieren wieder rückgängig und kehren zurück in den Raum der Wahrscheinlichkeit. Außerdem erlaubt sie uns auch den Exponenten der Produktform in einen Multiplikator umzuwandeln.
+\begin{lstlisting}
+def perplexity(model, test_data_tokens):
+    grams = getGrams(len(test_data_tokens), test_data_tokens)
+    accumulator = 0.0
+
+    for gram_list in grams:
+        for gram in gram_list:
+            prefix = tuple(gram[:-1])
+            suffix = gram[-1]
+            if len(prefix) > 0:
+                if prefix in model and suffix in model[prefix]:
+                    propabilitie = model[prefix][suffix]
+                    accumulator += math.log(propabilitie)
+                else:
+                    accumulator += math.log(1e-10)
+
+    perplexity_result = math.exp(accumulator / -len(test_data_tokens))
+    print(f"Perplexity: {perplexity_result}")
+\end{lstlisting}
+\subsection{Zukunft von N-Gramm Modellen}
+\subsubsection{Vergleich zu Transformermodellen}
+\quad Während n-Gram Modelle eine sehr effiziente und recht triviale Lösung für einfache Worterkennung sind ist es den modernen Modellen in einigen Punkten unterlegen. Zu erwähnen sind insbesondere die Transformer Modelle, welche insbesondere in der Lage sind, Kontexte von großen Texten viel besser modellieren können als n-Grame, da ihr Wahrscheinlichkeitsmodell nicht auf die Kontextlänge N-1 vorangegangenen Wörtern beschränkt ist. Außerdem haben sie damit eine erhöhte Flexibilität und gesteigerte Effizienz. Das sind dann keine einfachen Modelle mehr. Die Datenmenge, die benötigt wird, um solche Modelle zu trainieren ist noch viel größer als die von N-Gramen. Auch wenn bei einem N-Gram Modell schon zwei Wörter genügen würden werden sie dennoch erst mit großen Datenmengen nützlich. Dennoch lassen sich n-Gramme viel einfacher implementieren und sind deshalb für kleinere Projekte eine gute Wahl.
+\subsection{Ausblick}
+\quad Deshalb lässt sich auch sagen das vor allem im privaten Sektor und bei kleineren Projekten bei denen zum Beispiel kein langer Wortkontext wichtig ist n-Gramme weiterhin zum Einsatz kommen und auch weiterhin werden neue Ideen zur Verbesserung dieser Modelle kommen, welche das Modell relevant halten. Zum Beispiel bessere Glättungstechniken. Dennoch werden sich vor allem in State of the Art Projekte und große Firmen eher die Tranformermodelle etablieren da sie weitaus besser und effizienter sind. Erwähnenswert währen hierbei vor allem neuste Technologien wie ChatGPT4o.
+
 
 % Bibliography
 \clearpage
