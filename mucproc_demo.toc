@@ -1,15 +1,15 @@
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {2}Main Section 1 (FELIX)}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Subsection 1.1}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Subsection 1.2}{2}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Was ist un-seen N-Grams?}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Smoothing Techniques}{4}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Laplace-Glättung. Add One (Add X).}{4}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Good-Turing Glättung}{4}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Katz Backoff Glättung}{5}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Vergleich von N-Grammen und neuronalen Netzen.}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Main Section 3 (SIMON)}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Subsection 3.1}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Subsection 3.2}{7}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}%
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einführung}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Sprachmodelle}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}N-Gramme}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Was ist un-seen N-Grams?}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Smoothing Techniques}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Laplace-Glättung. Add One (Add X).}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Good-Turing Glättung}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Katz Backoff Glättung}{9}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Vergleich von N-Grammen und neuronalen Netzen.}{10}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Main Section 3 (SIMON)}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Subsection 3.1}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Subsection 3.2}{11}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Conclusion}{11}{section.4}%
