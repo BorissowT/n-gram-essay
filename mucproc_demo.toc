@@ -1,8 +1,8 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Einführung (Pötzsch Felix)}{3}{section.1}%
+\contentsline {section}{\numberline {1}Einführung (Pötzsch, Felix)}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Sprachmodelle}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}N-Gramme}{4}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov Timofei)}{7}{section.2}%
+\contentsline {section}{\numberline {2}Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov, Timofei)}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Was ist un-seen N-Grams?}{7}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Smoothing Techniques}{8}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Laplace-Glättung. Add One (Add X).}{8}{subsubsection.2.2.1}%
