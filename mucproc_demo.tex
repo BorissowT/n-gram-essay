@@ -83,30 +83,30 @@ Modell darstellen zu können. Ihnen liegt meist ein stochastischer Prozess zugru
 Bekannte Modelle sind:
 
 \begin{itemize}
-	\item RNN (Rekurrente Neuronale Netze)
+	\item RNN (Rekurrente Neuronale Netze)\cite[vgl.]{AIML2024}
 	\begin{itemize}
         \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell, kohärente Sätze gebildet werden.
         \item[-] Verschwindender Gradient. Abhängigkeiten in großer Entfernung können nicht mehr erkannt werden.
     \end{itemize}
-	\item LSTM (Long Short-Term Memory)
+	\item LSTM (Long Short-Term Memory)\cite[vgl.]{AIML2024}
 	\begin{itemize}
         \item[-] Art von RNN die das Problem des verschwindenden Gradienten durch Speicherzellen lösen.
         \item[-] Zelle ermöglicht selektives merken oder vergessen, wodurch langfristige Abhängigkeiten berücksichtigt werden können.
     \end{itemize}
-	\item GRU:
+	\item GRU (Gated recurrent Unit)\cite[vgl.]{AIML2024}
 	\begin{itemize}
         \item[-] Zielen darauf ab, die Architektur von LSTMs zu vereinfachen und gleichzeitig das Problem des verschwindenden Gradienten anzugehen.
         \item[-] Weniger Gating- Mechanismen aber dafür Rechenintensiver.
         \item[-] Haben eine vergleichbare Leistung wie LSTM.
     \end{itemize}
-	\item Transformer Modelle:
+	\item Transformer Modelle:\cite[vgl.]{AIML2024}
 	\begin{itemize}
-		\item[-] GPT
+		\item[-] GPT (Generative Pre-Trained Transformer)
 		\begin{itemize}
 			\item[-] Im Gegensatz zu RNN benutzen Transformer Selbstaufmerksamkeitsmechanismen.
 			\item[-] Transformatoren verarbeiten Wörter parallel, was zu höherer Effizienz führt.
 		\end{itemize}
-        \item[-] GPT4
+        \item[-] GPT4 (Generative Pre-Trained Transformer 4)
 		\begin{itemize}
 			\item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen. \cite{Spriesterbach2023}
 			\item[-] Umfangreicher Textkorpus.
@@ -498,6 +498,9 @@ def perplexity(model, test_data_tokens):
 % Bibliography
 \clearpage
 \begin{thebibliography}{9}
+
+	\bibitem{AIML2024}
+	AIML, \textit{Compare the different sequence models (RNN, LSTM, GRU, and Transformers)}, \url{https://aiml.com/compare-the-different-sequence-models-rnn-lstm-gru-and-transformers/}
 
 	\bibitem{Spriesterbach2023}
 	Kai Spriesterbach, \textit{Update: Geheimnis gelüftet! Soviele Parameter hat GPT-4}, \url{https://www.afaik.de/gpt-4-anzahl-parameter/}
