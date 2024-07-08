@@ -148,7 +148,7 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 N-Gramme, sind in der Linguistik eine Sequenz von N aufeinanderfolgenden Fragmenten eines Textes.
 Fragmente können dabei Buchstaben, Silben, Laute oder Wörter sein. Das können von 1-Gramm (Uni-Gramme),
 über 2-Gramm (Bi-Gramme), 3-Gramm (Tri-Gramme) bis Multigrammen sein. Ihnen zugrunde liegt die Markov-Annahme.
-Die Markov-Annahme erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller
+Die Markov-Annahme\cite{scheffervanck2019} erschließt eine Vorhersage über einen zukünftigen Zustand nicht aus der Menge aller
 Zustände, sondern nur der unmittelbaren vorherigen eingetretenen Zustände. Die Zustände können in diesem
 Falle als Fragmente aufgefasst werden. Die klassischen Anwendungsgebiete für N-Gramme liegen in der
 Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schreiben), Textanalyse
@@ -258,30 +258,30 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 	P(w_1 \mid w_1...w_i-1) = \frac {P(w_1...w_i)}{P(w_1...w_i-1)}
 \end{equation}
 \\
-Also die Wahrscheinlichkeit das Wort 1 eintritt unter der Bedingung, dass ein Paar andere Wörter vorher
+Also die Wahrscheinlichkeit, dass Wort 1 eintritt unter der Bedingung, dass ein Paar andere Wörter vorher
 schon in Kombination aufgetreten sind. Demnach wird Text auf Basis von statistischen Mustern generiert
 oder anders gesagt: Neu angeordnet. Es mangelt dadurch häufig an semantischem Verständnis. Insbesondere
 im Zusammenhang mit langfristigeren Abhängigkeiten (Kohärenz) sind Sprachmodelle die rein auf N-Grammen
-basieren sehr ungeeignet, um Texte zu schreiben. Da lediglich auf Basis einer \textit{Maximum-Likelyhood} Methode
+basieren sehr ungeeignet, um Texte zu schreiben. Da lediglich auf Basis einer \textit{Maximum-Likelyhood}\cite{scheffervanck2019} Methode
 gearbeitet wird, kann Text nur \textit{nacherzählt} werden aber nicht generiert.\\
 Es folgen nun ein paar typischen Eigenheiten von N-Grammen. Einem Totalversagen entgegenzuwirken, muss
 zunächst die Wahl eines geeigneten N priorisiert werden. Denn auch wenn ein geeigneter (Text-) Korpus
-gut gewählt wurde kann es zu \textit{Unseen N-Grams} kommen. Ebenso wie \textit{Unseen N-Grams} gibt es
-auch \textit{Unseen/Unknown Words}. Prinzipiell aber sollte gesagt werden, dass auch ein großer oder geeigneter Korpus nicht immer zum
-Erfolg führt, da auch dort Wortkombinationen oder Wörter \textit{Unseen} sein können (Chomsky, Zipfsches Gesetz).
+gut gewählt wurde kann es zu \textit{Unseen N-Grams}\cite{markert2019} kommen. Ebenso wie \textit{Unseen N-Grams}\cite{markert2019} gibt es
+auch \textit{Unseen/Unknown Words}\cite{markert2019}. Prinzipiell aber sollte gesagt werden, dass auch ein großer oder geeigneter Korpus nicht immer zum
+Erfolg führt, da auch dort Wortkombinationen oder Wörter \textit{Unseen} sein können (Chomsky, Zipfsches Gesetz).\cite{markert2019}
 Des Weiteren sollte auf den Underflow bei der Bewertung der Wahrscheinlichkeiten geachtet werden. Dieses
 Problem führt zum nächsten, denn es müssen nicht nur zu niedrige, sondern auch die vollständigen
 Nullwahrscheinlichkeiten beachtet werden.\\
 Es müssen also vor allem die Informationen in Form der Angepasstheit sowie Auswahl vorab gut gewählt werden
-sowie die im Folgenden beschrieben Techniken des \textit{Smoothings}, also der Re-evaluation von
+sowie die im Folgenden beschrieben Techniken des \textit{Smoothings}\cite{markert2019}, also der Re-evaluation von
 Nullwahrscheinlichkeiten und niedrigen Wahrscheinlichkeiten eigesetzt werden. Dazu zählt ebenfalls die
-zusätzlich im Folgenden beschriebene Perplexität als Evaluationstechnik, um auf \textit{Back Off Words}, also
+zusätzlich im Folgenden beschriebene Perplexität als Evaluationstechnik, um auf \textit{Back Off Words}\cite{markert2019}, also
 Wörter, auf welche ausgewichen werden kann, zu kommen.
 
 
 \section{Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov, Timofei)}
 \subsection{Was ist un-seen N-Grams?}
-Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "zero probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
+Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "Zero Probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
 
 Betrachten wir die Wörter, die auf das Bigram aus Daniel Jurafskys Buch basieren. Ein Textkorpus zusammen mit ihrer Anzahl:
 
@@ -303,7 +303,7 @@ P(loan|denied the) ist 0!
 
 Diese Nullen bedeuten, dass wir die Wahrscheinlichkeit anderer Wortkombinationen stark unterschätzt haben, was die richtige Entscheidung der Anwendung, die auf unserem Modell läuft, stark beeinflussen könnte.
 
-Das Problem heißt “Data Sparsity” \cite{dremio2023}. Also kurz gesagt, das bedeutet, dass viele Daten in einem Datensatz fehlen oder auf Null gesetzt sind, sodass die meisten Zellen in einer Tabelle leer bleiben. Dies tritt häufig bei spärlichen Matrizen oder hochdimensionalen Datensätzen auf, wo nicht alle Elemente beobachtet oder erfasst werden. Was können wir also mit den Wörtern machen, die wir verwenden und die nicht in den Kontext unserer Trainingsdaten passen?
+Das Problem heißt “Data Sparsity”\cite{dremio2023}. Also kurz gesagt, das bedeutet, dass viele Daten in einem Datensatz fehlen oder auf Null gesetzt sind, sodass die meisten Zellen in einer Tabelle leer bleiben. Dies tritt häufig bei spärlichen Matrizen oder hochdimensionalen Datensätzen auf, wo nicht alle Elemente beobachtet oder erfasst werden. Was können wir also mit den Wörtern machen, die wir verwenden und die nicht in den Kontext unserer Trainingsdaten passen?
 
 Die Methode zur Lösung dieses Problems heißt: Smoothing oder Discounting.
 
@@ -351,7 +351,7 @@ Good-Turing-Smoothing löst dieses Dilemma, indem es die Häufigkeitswerte anpas
 \begin{center}
 	\includegraphics[width=0.3\textwidth]{statics/Borisov/7.PNG}
 \end{center}
-\cite{maucher2022}, \cite{gale1995}
+\cite{maucher2022},\cite{gale1995}
 
 \subsubsection{Katz Backoff Glättung}
 \quad Wenn ein benötigtes n-Gramm in einem Backoff-N-Gramm-Modell keine Vorkommen aufweist, gehen wir zum (n-1)-Gramm über. Dieser Prozess wird fortgesetzt, bis wir eine Sequenz finden, die einige Vorkommen hat.
@@ -501,6 +501,12 @@ def perplexity(model, test_data_tokens):
 
 	\bibitem{Spriesterbach2023}
 	Kai Spriesterbach, \textit{Update: Geheimnis gelüftet! Soviele Parameter hat GPT-4}, \url{https://www.afaik.de/gpt-4-anzahl-parameter/}
+
+	\bibitem{markert2019}
+	Katja Markert, \textit{N-gram Modeling}, Institut für Computerlinguistik Uni Heidelberg
+
+	\bibitem{scheffervanck2019}
+	Tobias Scheffer und Thomas Vanck, \textit{Statistische Sprachmodelle}, Universtät Potsdam, \url{https://docplayer.org/115275693-Statistische-sprachmodelle.html} 2019. 
 
 	\bibitem{jurafsky2023}
 	Daniel Jurafsky and James H. Martin, \textit{Speech and Language Processing}, 3rd Edition, Pearson, 2023.
