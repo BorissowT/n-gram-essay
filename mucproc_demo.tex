@@ -383,25 +383,31 @@ Anschließend:
 \quad Neuronale Netze sind mittlerweile kontextbewusst. Insbesondere mit Architekturen wie LSTM (Long Short-Term Memory) oder Transformer-Modellen können neuronale Netze weitreichende Abhängigkeiten und kontextuelle Informationen über ganze Sätze oder sogar Absätze hinweg erfassen. Sie verfügen über ein automatisches Lernen von Merkmalen während des Trainingsprozesses, wodurch sich der Bedarf an umfangreicher manueller Merkmalstechnik verringert usw.Wir müssen jedoch den Vorteil von N-Grammen anerkennen. Bei kurzen Texten sind N-Gramm-Methoden dem neuronalen Netz überlegen.
 \cite{babukumar2010}
 
+
 \section{Konkrete Schritte zur Implementierung eines N-Gramm Modells in Pyhton (Furitsch, Simon)}
 \subsection{Datenvorbereitung}
 \quad Die Daten müssen zuerst in ein für das Training geeignetes Format gebracht werden. Hierzu wird der Text zuerst in Kleinbuchstaben konvertiert und die Sonderzeichen und Zahlen werden entfernt. Textfehler, wie Beispielsweiße doppele Leerzeichen werden gemeinsam mir den \textbf{Stoppwörtern} bereinigt
 \subsubsection{Stoppwörter}
 \quad Stoppwörter sind Füllwörter, welche keine richtige Bedeutung für die Textvorhersage habe, ein Beispiel hierfür ist das Wort: „aber“
+\cite{nilsstuck}
 \subsubsection{Stemming und Lemming}
 \quad Eine Möglichkeit das Modell anzupassen ist es die Wörter in eine andere Form zu bringen. Dies kann sich sowohl positiv als auch negativ auf das Modell auswirken, hierzu sei aber der Anwendungsfall von Bedeutung. Insbesondere ist hierbei auf das Evaluieren durch die in Kapitel 4.5 genannte \textbf{Perplexität} hingewießen. Diese kann dabei helfen die Auswirkung von Stemmung und Lemming zu ermitteln.
 \\Beim \textbf{Stemming} wird das Wort einfach in seinen Wortstamm gesetzt: aus singen wird sing und aus gehen wird geh
 \\Beim \textbf{Lemming} hingegen wird das Wort in seine Grundform gebracht. aus Häuser wird Haus und aus ging wird gehen
+\cite{kurtiespykes}\cite{jurafsky}
 \subsection{Grundlagen}
 \subsubsection{Bibliothek: NLTK}
 \quad Im Kapitel 4.3 wird für den Code die Bibiothek NLTK verwendet. Natural Language Toolkit ist die populärste Bibliothek in der neurolighuistischen Programmierung. Diese Bibliothek macht unter anderem das Tokenisieren, die Erzeugung von Grams, das importieren verschiedener Textkörper und vieles weiteres zum Einzeiler. Auch in den folgenden Kapiteln werden die Funtionalitäten näher beleuchtet.
+\cite{stevenbird}
 \subsubsection{Tokenisierung}
 \quad Bei der Tokenisierung handelt es sich um die Aufteilung einer Zeichenkette in kleinere Teile. Die für n-Gram meist genutzte Tokenisierungsmethode ist die Tokenisierung in Wörtern da ja auch die Vorhersahe auf Wörtern basiert. Das bedeutet jedes Wort wird ein Token in der Lösungsmenge. Aus „Das ist ein Satz“, wird {„das“,“ist“,“ein“,“satz“}. Diese Menge wird dann verwendet, um die n-Grams zu erzeugen
 \\In \textbf{NLTK} wird der Worttokenisierer mitgeliefert
+\cite{jurafsky}
 \begin{lstlisting}
 def tokenize(text):
     return nltk.word_tokenize(text.lower())
 \end{lstlisting}
+\cite{stevenbird}
 \subsubsection{Grams erzeugen}
 \quad Nun werden die Tokens verwendet, um n-Gramme zu erzeugen. Die konkrete Zahl des n hängt stark von der Kontextanforderung an das Modell ab. Während niedrige n zum Beispiel Unigram (1-gram) und Biagram (2-gram) nützlich für Wortverbindungen und einen geringen Kontext sind, sind Modelle mit hohen n nützlich für die Schätzung von größeren Sätzen bzw. über einen längeren Kontext hinaus.
 \\In \textbf{NLTK} ist dies wieder ganz einfach
@@ -409,6 +415,7 @@ def tokenize(text):
 def getGram(gram, tokens):
     return list(nltk.ngrams(tokens, gram))
 \end{lstlisting}
+\cite{stevenbird}
 Dies ist eine Methode welche das n und die Tokens übergeben bekommt und daraus das gewünschte Gram erzeugt. Zum Beispiel n=2 alle Biagramme der Tokens. Für die Ermittlung der in Kapitel 4.2.4 genannten bedingten Wahrscheinlichkeiten ist es jedoch auch notwendig die Wahrscheinlichkeiten und somit auch die Grams der darunter liegenden Dimensionen zu ermitteln. Geht man also von n=3 aus sollten alle Unigramme, Biagramme und Triagramme erzeugt werden.
 \begin{lstlisting}
 def getGrams(n, tokens):
@@ -432,10 +439,11 @@ def buildModel(grams):
     return model
 \end{lstlisting}
 Hier wird das Model einfach in einem zweidimensionalen Dictionary gespeichert. Der Schlüssel der ersten Dimension ist der Prefix, also alles bis auf das letzte Wort. Die zweite Dimension ist der Suffix, also das letze Wort. Der Wert dahinter ist die Anzahl wie oft der Suffix auf den Prefix gefolgt ist.
+\cite{saylordotorg}
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{statics/Furitsch/table.PNG}
 \end{center}
-\begin{lstlisting}
+\\\begin{lstlisting}
 def convertToProbabilities(model):
     for prefix in model:
         total_count = sum(model[prefix].values())
@@ -444,8 +452,9 @@ def convertToProbabilities(model):
             model[prefix][suffix] /= total_count
 \end{lstlisting}
 Hier wird nun ermittelt wie viel mögliche Suffixe es für einen Prefix gibt. Anschließend wird das Vorkommen der einzelnen Suffixe geteilt durch die Anzahl aller Suffixe denn das liefert uns die benötigten bedingten Wahrscheinlichkeiten.
+\cite{jurafsky}
 \subsubsection{Vorhersage}
-\begin{lstlisting}
+\\\begin{lstlisting}
 def predict(model, prefix):
     if prefix in model:
         possible_words = model[prefix]
@@ -465,10 +474,12 @@ Die Perplexität ist das wichtigste Maß, um die Qualität eines n-Gram Modells 
 Es werden also die Wahrscheinlichkeiten aller Präfix/Suffix Kombinationen des Testsatzes in ein Produkt umgewandelt und dieses wird durch den negativen Durchschnitt poteziert.
 Doch diese Variante bringt einige Probleme mit sich. Zum einen können ohne die Verwendung von Smoothing Techniken Nullwahrscheinlichkeiten mit in das Produkt einfließen was das Peodukt in jedem Fall 0 macht. Außerdem ist diese Variante unstabil bei sehr vielen sehr kleinen Werten da der Endwert dadurch immer kleiner wird.
 Deshalb gibt es eine äquivalente Umformung
+\cite{jurafsk}
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{statics/Furitsch/log_var.png}
 \end{center}
 Es werden alle ermittelten Wahrscheinlichkeiten logarithmiert, anschließend summiert, durch den negativen Wert der Anzahl der Wahrscheinlichkeitselementmenge geteilt. Dieser Wert wird in e-Funktion gegeben um anschließend einen endgültigen Wert zu bringen. Je niedriger dieser ist, umso besser konnte der Testsatz von dem Modell verhergesagt werden.\\ Das Logarithmieren dient dazu, vor allem sehr kleine Zahlen wieder größer zu skalieren, um mit ihnen besser arbeiten zu können. Da das Logarithmieren eine monotone Transformation ist, das bedeutet der Wert wird zwar verändert aber sein Verhältnis zu den anderen Werten wird nicht verändert. Durch die Logarithmusgesetzte wissen wir dass wir das Produkt nun in Summen umwandeln können und durch die E-Funtion machen wird das Logarithmieren wieder rückgängig und kehren zurück in den Raum der Wahrscheinlichkeit. Außerdem erlaubt sie uns auch den Exponenten der Produktform in einen Multiplikator umzuwandeln.
+\cite{jurafsk}
 \begin{lstlisting}
 def perplexity(model, test_data_tokens):
     grams = getGrams(len(test_data_tokens), test_data_tokens)
@@ -491,6 +502,7 @@ def perplexity(model, test_data_tokens):
 \subsection{Zukunft von N-Gramm Modellen}
 \subsubsection{Vergleich zu Transformermodellen}
 \quad Während n-Gram Modelle eine sehr effiziente und recht triviale Lösung für einfache Worterkennung sind ist es den modernen Modellen in einigen Punkten unterlegen. Zu erwähnen sind insbesondere die Transformer Modelle, welche insbesondere in der Lage sind, Kontexte von großen Texten viel besser modellieren können als n-Grame, da ihr Wahrscheinlichkeitsmodell nicht auf die Kontextlänge N-1 vorangegangenen Wörtern beschränkt ist. Außerdem haben sie damit eine erhöhte Flexibilität und gesteigerte Effizienz. Das sind dann keine einfachen Modelle mehr. Die Datenmenge, die benötigt wird, um solche Modelle zu trainieren ist noch viel größer als die von N-Gramen. Auch wenn bei einem N-Gram Modell schon zwei Wörter genügen würden werden sie dennoch erst mit großen Datenmengen nützlich. Dennoch lassen sich n-Gramme viel einfacher implementieren und sind deshalb für kleinere Projekte eine gute Wahl.
+\cite{mdpi1} \cite{mdpi2}
 \subsection{Ausblick}
 \quad Deshalb lässt sich auch sagen das vor allem im privaten Sektor und bei kleineren Projekten bei denen zum Beispiel kein langer Wortkontext wichtig ist n-Gramme weiterhin zum Einsatz kommen und auch weiterhin werden neue Ideen zur Verbesserung dieser Modelle kommen, welche das Modell relevant halten. Zum Beispiel bessere Glättungstechniken. Dennoch werden sich vor allem in State of the Art Projekte und große Firmen eher die Tranformermodelle etablieren da sie weitaus besser und effizienter sind. Erwähnenswert währen hierbei vor allem neuste Technologien wie ChatGPT4o.
 
@@ -539,6 +551,38 @@ def perplexity(model, test_data_tokens):
 	\bibitem{babukumar2010}
 	A. Suresh Babu, Kumar P.N.V.S.Pavan
 	\textit{Comparing Neural Network Approach with N-Gram Approach for Text Categorization},     January 2010International Journal on Computer Science and Engineering 2(1)
+
+	\bibitem{stevenbird}
+    Steven Bird, NLTK Documentation Release 3.2.5
+    https://readthedocs.org/projects/nltk/downloads/pdf/latest/
+
+    \bibitem{kurtiespykes}
+    Kurties Pykes, Stemming and Lemmatization in Python
+    https://www.datacamp.com/tutorial/stemming-lemmatization-python
+
+    \bibitem{jurafsky}
+    Daniel Jurafsky , Regular Expressions, Text Normalization, Edit Distance
+    https://web.stanford.edu/~jurafsky/slp3/2.pdf
+
+    \bibitem{jurafsk}
+    Daniel Jurafsky, N gram language Models
+    https://web.stanford.edu/~jurafsky/slp3/3.pdf
+
+    \bibitem{nilsstuck}
+    Nils Stuck, Stoppwörter
+    https://wolf-of-seo.de/was-ist/stop-words-stoppwoerter/
+
+    \bibitem{saylordotorg}
+    Prefix and Suffix?
+    https://saylordotorg.github.io/text_business-english-for-success/s07-04-prefixes-and-suffixes.html
+
+    \bibitem{mdpi1}
+    Diana Oralbekova, Orken Mamyrbayev, mohammed Othman, Dinara Kassymova and Kuralai Mukhsina: Contampory Approaches in Evolving  Langueage Models
+    https://www.mdpi.com/2076-3417/13/23/12901
+
+    \bibitem{mdpi2}
+    Abir Rahali and Moulay A. Akhloufi: End to end Transformer Based Models in Textual-based NLP
+    https://www.mdpi.com/2076-3417/13/23/12901
 
 \end{thebibliography}
 
