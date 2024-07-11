@@ -84,36 +84,36 @@ Bekannte Modelle sind:
 
 \begin{itemize}
 	\item RNN (Rekurrente Neuronale Netze)\cite[vgl.]{AIML2024}
-	\begin{itemize}
-        \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell, kohärente Sätze gebildet werden.
-        \item[-] Verschwindender Gradient. Abhängigkeiten in großer Entfernung können nicht mehr erkannt werden.
-    \end{itemize}
+	      \begin{itemize}
+		      \item[-] Abhängigkeiten zwischen Wörtern können erfasst werden und so kontextuell, kohärente Sätze gebildet werden.
+		      \item[-] Verschwindender Gradient. Abhängigkeiten in großer Entfernung können nicht mehr erkannt werden.
+	      \end{itemize}
 	\item LSTM (Long Short-Term Memory)\cite[vgl.]{AIML2024}
-	\begin{itemize}
-        \item[-] Art von RNN die das Problem des verschwindenden Gradienten durch Speicherzellen lösen.
-        \item[-] Zelle ermöglicht selektives merken oder vergessen, wodurch langfristige Abhängigkeiten berücksichtigt werden können.
-    \end{itemize}
+	      \begin{itemize}
+		      \item[-] Art von RNN die das Problem des verschwindenden Gradienten durch Speicherzellen lösen.
+		      \item[-] Zelle ermöglicht selektives merken oder vergessen, wodurch langfristige Abhängigkeiten berücksichtigt werden können.
+	      \end{itemize}
 	\item GRU (Gated recurrent Unit)\cite[vgl.]{AIML2024}
-	\begin{itemize}
-        \item[-] Zielen darauf ab, die Architektur von LSTMs zu vereinfachen und gleichzeitig das Problem des verschwindenden Gradienten anzugehen.
-        \item[-] Weniger Gating- Mechanismen aber dafür Rechenintensiver.
-        \item[-] Haben eine vergleichbare Leistung wie LSTM.
-    \end{itemize}
+	      \begin{itemize}
+		      \item[-] Zielen darauf ab, die Architektur von LSTMs zu vereinfachen und gleichzeitig das Problem des verschwindenden Gradienten anzugehen.
+		      \item[-] Weniger Gating- Mechanismen aber dafür Rechenintensiver.
+		      \item[-] Haben eine vergleichbare Leistung wie LSTM.
+	      \end{itemize}
 	\item Transformer Modelle:\cite[vgl.]{AIML2024}
-	\begin{itemize}
-		\item[-] GPT (Generative Pre-Trained Transformer)
-		\begin{itemize}
-			\item[-] Im Gegensatz zu RNN benutzen Transformer Selbstaufmerksamkeitsmechanismen.
-			\item[-] Transformatoren verarbeiten Wörter parallel, was zu höherer Effizienz führt.
-		\end{itemize}
-        \item[-] GPT4 (Generative Pre-Trained Transformer 4)
-		\begin{itemize}
-			\item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen. \cite{Spriesterbach2023}
-			\item[-] Umfangreicher Textkorpus.
-			\item[-] Besonders gut für kohärente und kontextrelevante Texte.
-			\item[-] Kann für Vielzahl von Anwendungen verwendet werden, z.B.: Code-generierung.
-		\end{itemize}
-    \end{itemize}
+	      \begin{itemize}
+		      \item[-] GPT (Generative Pre-Trained Transformer)
+		            \begin{itemize}
+			            \item[-] Im Gegensatz zu RNN benutzen Transformer Selbstaufmerksamkeitsmechanismen.
+			            \item[-] Transformatoren verarbeiten Wörter parallel, was zu höherer Effizienz führt.
+		            \end{itemize}
+		      \item[-] GPT4 (Generative Pre-Trained Transformer 4)
+		            \begin{itemize}
+			            \item[-] Ist im Gegensatz zu GPT3 (1,76 Billionen Parameter) kein monolithisches Sprachmodell mehr sondern eher eine Mischung aus 8 x 220 Milliarden Parametermodellen. \cite{Spriesterbach2023}
+			            \item[-] Umfangreicher Textkorpus.
+			            \item[-] Besonders gut für kohärente und kontextrelevante Texte.
+			            \item[-] Kann für Vielzahl von Anwendungen verwendet werden, z.B.: Code-generierung.
+		            \end{itemize}
+	      \end{itemize}
 \end{itemize}
 
 
@@ -122,26 +122,26 @@ Sprachmodelle lassen sich in 4 verschiedene Sorten einteilen:
 
 \begin{itemize}
 	\item Regelbasierte Systeme \cite[vgl.]{thamm}
-	\begin{itemize}
-		\item[-] Vordefinierte Sprachregeln, Vorlagen.
-		\item[-] Fehlende Fähigkeit kontextrelevante dynamische Text zu generieren.
-	\end{itemize}
+	      \begin{itemize}
+		      \item[-] Vordefinierte Sprachregeln, Vorlagen.
+		      \item[-] Fehlende Fähigkeit kontextrelevante dynamische Text zu generieren.
+	      \end{itemize}
 	\item Vorlagenbasierte Systeme
-	\begin{itemize}
-		\item[-] Vordefinierte Vorlagen, die mit dynamischen Inhalten gefüllt werden.
-		\item[-] Gewisses Maß an Anpassung möglich (Grammatik).
-		\item[-] Kein einzigartiger kreativer Text.
-	\end{itemize}
+	      \begin{itemize}
+		      \item[-] Vordefinierte Vorlagen, die mit dynamischen Inhalten gefüllt werden.
+		      \item[-] Gewisses Maß an Anpassung möglich (Grammatik).
+		      \item[-] Kein einzigartiger kreativer Text.
+	      \end{itemize}
 	\item Statistische Sprachmodelle
-	\begin{itemize}
-		\item[-] N-Gramme, Markov (HMM)
-		\item[-] Mangel an semantischem Verständnis und Schwierigkeiten kontextrelevante Inhalte zu erzeugen.
-	\end{itemize}
+	      \begin{itemize}
+		      \item[-] N-Gramme, Markov (HMM)
+		      \item[-] Mangel an semantischem Verständnis und Schwierigkeiten kontextrelevante Inhalte zu erzeugen.
+	      \end{itemize}
 	\item Neuronale Sprachmodelle
-	\begin{itemize}
-		\item[-] Dialoge sind möglich und es können sowohl Kontextrelevante als auch Kohärente Teile erkannt werden.
-		\item[-] Siehe RNN, LSTM, GRU, GPT
-	\end{itemize}
+	      \begin{itemize}
+		      \item[-] Dialoge sind möglich und es können sowohl Kontextrelevante als auch Kohärente Teile erkannt werden.
+		      \item[-] Siehe RNN, LSTM, GRU, GPT
+	      \end{itemize}
 \end{itemize}
 
 \subsection{N-Gramme}
@@ -158,57 +158,57 @@ Rechtschreibkorrektur, Textvervollständigung/Wörter vorhersage (z.B.: SMS schr
 
 Unigramm:
 $N = 1$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This}}
-			\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}}
-			\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}}
-			\fbox{\raisebox{0pt}[0.6cm][0.35cm]{\strut sentence}}.
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\coordinate (A) at (0,0.4);
-				\coordinate (B) at (3,1);
-				\coordinate (C) at (0,-0.2);
-				\coordinate (D) at (3,-1);
-				\draw (A) -- (B);
-				\draw (C) -- (D);
-			\end{tikzpicture}
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\node at (2,0.9) {This};
-				\node at (2,0.3) {is};
-				\node at (2,-0.3) {a};
-				\node at (2,-0.9) {sentence};
-			\end{tikzpicture}\\[0.5cm]
+\fbox{\raisebox{0pt}[0.4cm][0.15cm]{\strut is}}
+\fbox{\raisebox{0pt}[0.5cm][0.25cm]{\strut a}}
+\fbox{\raisebox{0pt}[0.6cm][0.35cm]{\strut sentence}}.
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\coordinate (A) at (0,0.4);
+	\coordinate (B) at (3,1);
+	\coordinate (C) at (0,-0.2);
+	\coordinate (D) at (3,-1);
+	\draw (A) -- (B);
+	\draw (C) -- (D);
+\end{tikzpicture}
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\node at (2,0.9) {This};
+	\node at (2,0.3) {is};
+	\node at (2,-0.3) {a};
+	\node at (2,-0.9) {sentence};
+\end{tikzpicture}\\[0.5cm]
 
 Bigramm:
 $N = 2$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is}}
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}}
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\coordinate (A) at (0,0.4);
-				\coordinate (B) at (3,1);
-				\coordinate (C) at (0,-0.2);
-				\coordinate (D) at (3,-1);
-				\draw (A) -- (B);
-				\draw (C) -- (D);
-			\end{tikzpicture}
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\node at (2,0.9) {This is};
-				\node at (2,0.3) {is a};
-				\node at (2,-0.3) {a sentence};
-			\end{tikzpicture}\\[0.5cm]
+\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut a}}
+\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.5cm][0.25cm]{\strut sentence}}.
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\coordinate (A) at (0,0.4);
+	\coordinate (B) at (3,1);
+	\coordinate (C) at (0,-0.2);
+	\coordinate (D) at (3,-1);
+	\draw (A) -- (B);
+	\draw (C) -- (D);
+\end{tikzpicture}
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\node at (2,0.9) {This is};
+	\node at (2,0.3) {is a};
+	\node at (2,-0.3) {a sentence};
+\end{tikzpicture}\\[0.5cm]
 
 Trigramm:
 $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
-			\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut sentence}}.
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\coordinate (A) at (0,0.4);
-				\coordinate (B) at (3,1);
-				\coordinate (C) at (0,-0.2);
-				\coordinate (D) at (3,-1);
-				\draw (A) -- (B);
-				\draw (C) -- (D);
-			\end{tikzpicture}
-			\begin{tikzpicture}[baseline={(current bounding box.center)}]
-				\node at (2,0.9) {This is a};
-				\node at (2,0.3) {is a sentence};
-			\end{tikzpicture}\\[1cm]
+\hspace{-0.6cm}\fbox{\hspace{0.4cm}\raisebox{0pt}[0.4cm][0.15cm]{\strut sentence}}.
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\coordinate (A) at (0,0.4);
+	\coordinate (B) at (3,1);
+	\coordinate (C) at (0,-0.2);
+	\coordinate (D) at (3,-1);
+	\draw (A) -- (B);
+	\draw (C) -- (D);
+\end{tikzpicture}
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+	\node at (2,0.9) {This is a};
+	\node at (2,0.3) {is a sentence};
+\end{tikzpicture}\\[1cm]
 
 
 \noindent Die daraus folgende typische Markov Annahme als Prozessdiagramm und Übergangstabelle würde dazu folgend aussehen:\\
@@ -223,25 +223,25 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 		\node[state]         (C) [above right of=B] {$Z_3$};
 
 		\path 	(A) edge [loop above] node {0.3} (A)
-				(B) edge node {0.3} (A)
-				(A) edge node {0.7} (B)
-				(B) edge [loop below] node {0.3}
-				(B)	edge              node {0.4} (C)
-				(C) edge [loop above] node {1} (C);
+		(B) edge node {0.3} (A)
+		(A) edge node {0.7} (B)
+		(B) edge [loop below] node {0.3}
+		(B)	edge              node {0.4} (C)
+		(C) edge [loop above] node {1} (C);
 
 	\end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
 	\begin{tabular}{ m{1cm} | m{1cm}| m{1cm} | m{1cm} }
-		& $Z_1$ & $Z_2$ & $Z_3$\\
+		      & $Z_1$ & $Z_2$ & $Z_3$ \\
 		\hline
-		$Z_1$ & 0.3 & 0.3 & 0\\
+		$Z_1$ & 0.3   & 0.3   & 0     \\
 		\hline
-		$Z_2$ & 0.7 & 0.3 & 0\\
+		$Z_2$ & 0.7   & 0.3   & 0     \\
 		\hline
-		$Z_3$ & 0 & 0.4 & 1\\
+		$Z_3$ & 0     & 0.4   & 1     \\
 		\hline
-		$=$ & 1 & 1 & 1\\
+		$=$   & 1     & 1     & 1     \\
 	\end{tabular}
 \end{minipage}\\[1cm]
 
@@ -249,8 +249,8 @@ $N = 3$: 	\fbox{\raisebox{0pt}[0.3cm][0.05cm]{\strut This is a}}
 
 \begin{equation}
 	\begin{split}
-	P(t) = P(w_1, w_2,...w_n) &= P(w_1)*P(w_2 \mid w_1)...P(w_n \mid w_1,...w_n-1) \\
-	&= \prod_{i=1}^{n} P(w_i \mid w_1...w_i-1)
+		P(t) = P(w_1, w_2,...w_n) & = P(w_1)*P(w_2 \mid w_1)...P(w_n \mid w_1,...w_n-1) \\
+		                          & = \prod_{i=1}^{n} P(w_i \mid w_1...w_i-1)
 	\end{split}
 \end{equation}
 
@@ -281,7 +281,7 @@ Wörter, auf welche ausgewichen werden kann, zu kommen.
 
 \section{Fortgeschrittene Konzepte und Techniken in N-Gramm-Modellen (Borisov, Timofei)}
 \subsection{Was ist un-seen N-Grams?}
-Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "Zero Probability n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
+Da jeder Corpus begrenzt ist, fehlen darin zwangsläufig einige völlig akzeptable Wortfolgen. Das heißt, wir werden viele Fälle von vermeintlichen "Null Wahrscheinlichkeit n-grams" haben, die in Wirklichkeit eine Nicht-Null-Wahrscheinlichkeit haben sollten \cite{jurafsky2023}.
 
 Betrachten wir die Wörter, die auf das Bigram aus Daniel Jurafskys Buch basieren. Ein Textkorpus zusammen mit ihrer Anzahl:
 
@@ -512,7 +512,7 @@ def perplexity(model, test_data_tokens):
 	Katja Markert, \textit{N-gram Modeling}, Institut für Computerlinguistik Uni Heidelberg
 
 	\bibitem{scheffervanck2019}
-	Tobias Scheffer und Thomas Vanck, \textit{Statistische Sprachmodelle}, Universtät Potsdam, \url{https://docplayer.org/115275693-Statistische-sprachmodelle.html} 2019. 
+	Tobias Scheffer und Thomas Vanck, \textit{Statistische Sprachmodelle}, Universtät Potsdam, \url{https://docplayer.org/115275693-Statistische-sprachmodelle.html} 2019.
 
 	\bibitem{jurafsky2023}
 	Daniel Jurafsky and James H. Martin, \textit{Speech and Language Processing}, 3rd Edition, Pearson, 2023.
