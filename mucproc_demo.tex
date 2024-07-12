@@ -356,7 +356,7 @@ Good-Turing-Smoothing löst dieses Dilemma, indem es die Häufigkeitswerte anpas
 \subsubsection{Katz Backoff Glättung}
 \quad Wenn ein benötigtes n-Gramm in einem Backoff-N-Gramm-Modell keine Vorkommen aufweist, gehen wir zum (n-1)-Gramm über. Dieser Prozess wird fortgesetzt, bis wir eine Sequenz finden, die einige Vorkommen hat.
 \\ Damit ein Backoff-Modell eine korrekte Wahrscheinlichkeitsverteilung ergibt, müssen die n-Gramme höherer Ordnung reduziert werden, um etwas Wahrscheinlichkeitsmasse für die n-Gramme niedrigerer Ordnung zu reservieren. Ähnlich wie bei der Add-One-Glättung führt die Verwendung der nicht diskontierten MLE-Wahrscheinlichkeit dazu, dass bei der Ersetzung eines n-Gramms mit einer Wahrscheinlichkeit von Null durch ein n-Gramm niedrigerer Ordnung zusätzliche Wahrscheinlichkeitsmasse hinzugefügt wird. Dies würde dazu führen, dass die Gesamtwahrscheinlichkeit, die das Sprachmodell allen möglichen Zeichenketten zuweist, größer als 1 ist. Neben diesem expliziten Abzinsungsfaktor benötigen wir eine Funktion a, um diese Wahrscheinlichkeitsmasse auf die n-Gramme niedrigerer Ordnung zu verteilen.
-\\ \\Beim Katz-Backoff stützen wir uns auf eine diskontierte Wahrscheinlichkeit P*, wobei wir rekursiv auf die Katz-Wahrscheinlichkeit für das (n-1)-Gramm mit kürzerer Vorgeschichte zurückgehen. Die Wahrscheinlichkeit für ein Backoff n-Gramm PBO wird also wie folgt berechnet:
+\\ \\Beim Katz-Backoff stützen wir uns auf eine diskontierte Wahrscheinlichkeit P*, wobei wir rekursiv auf die Katz-Wahrscheinlichkeit für das (n-1)-Gramm mit kürzerer Vorgeschichte zurückgehen. Die Wahrscheinlichkeit für ein Backoff n-Gramm Pbo wird also wie folgt berechnet:
 \begin{center}
 	\includegraphics[width=0.4\textwidth]{statics/Borisov/8.PNG}
 \end{center}
@@ -443,7 +443,7 @@ Hier wird das Model einfach in einem zweidimensionalen Dictionary gespeichert. D
 \begin{center}
 	\includegraphics[width=0.8\textwidth]{statics/Furitsch/table.PNG}
 \end{center}
-\\\begin{lstlisting}
+\begin{lstlisting}
 def convertToProbabilities(model):
     for prefix in model:
         total_count = sum(model[prefix].values())
@@ -454,7 +454,7 @@ def convertToProbabilities(model):
 Hier wird nun ermittelt wie viel mögliche Suffixe es für einen Prefix gibt. Anschließend wird das Vorkommen der einzelnen Suffixe geteilt durch die Anzahl aller Suffixe denn das liefert uns die benötigten bedingten Wahrscheinlichkeiten.
 \cite{jurafsky}
 \subsubsection{Vorhersage}
-\\\begin{lstlisting}
+\begin{lstlisting}
 def predict(model, prefix):
     if prefix in model:
         possible_words = model[prefix]
@@ -553,36 +553,36 @@ def perplexity(model, test_data_tokens):
 	\textit{Comparing Neural Network Approach with N-Gram Approach for Text Categorization},     January 2010International Journal on Computer Science and Engineering 2(1)
 
 	\bibitem{stevenbird}
-    Steven Bird, NLTK Documentation Release 3.2.5
-    https://readthedocs.org/projects/nltk/downloads/pdf/latest/
+	Steven Bird, NLTK Documentation Release 3.2.5
+	https://readthedocs.org/projects/nltk/downloads/pdf/latest/
 
-    \bibitem{kurtiespykes}
-    Kurties Pykes, Stemming and Lemmatization in Python
-    https://www.datacamp.com/tutorial/stemming-lemmatization-python
+	\bibitem{kurtiespykes}
+	Kurties Pykes, Stemming and Lemmatization in Python
+	https://www.datacamp.com/tutorial/stemming-lemmatization-python
 
-    \bibitem{jurafsky}
-    Daniel Jurafsky , Regular Expressions, Text Normalization, Edit Distance
-    https://web.stanford.edu/~jurafsky/slp3/2.pdf
+	\bibitem{jurafsky}
+	Daniel Jurafsky , Regular Expressions, Text Normalization, Edit Distance
+	https://web.stanford.edu/~jurafsky/slp3/2.pdf
 
-    \bibitem{jurafsk}
-    Daniel Jurafsky, N gram language Models
-    https://web.stanford.edu/~jurafsky/slp3/3.pdf
+	\bibitem{jurafsk}
+	Daniel Jurafsky, N gram language Models
+	https://web.stanford.edu/~jurafsky/slp3/3.pdf
 
-    \bibitem{nilsstuck}
-    Nils Stuck, Stoppwörter
-    https://wolf-of-seo.de/was-ist/stop-words-stoppwoerter/
+	\bibitem{nilsstuck}
+	Nils Stuck, Stoppwörter
+	https://wolf-of-seo.de/was-ist/stop-words-stoppwoerter/
 
-    \bibitem{saylordotorg}
-    Prefix and Suffix?
-    https://saylordotorg.github.io/text_business-english-for-success/s07-04-prefixes-and-suffixes.html
+	\bibitem{saylordotorg}
+	Prefix and Suffix?
+	$https://saylordotorg.github.io/text_business-english-for-success/s07-04-prefixes-and-suffixes.html$
 
-    \bibitem{mdpi1}
-    Diana Oralbekova, Orken Mamyrbayev, mohammed Othman, Dinara Kassymova and Kuralai Mukhsina: Contampory Approaches in Evolving  Langueage Models
-    https://www.mdpi.com/2076-3417/13/23/12901
+	\bibitem{mdpi1}
+	Diana Oralbekova, Orken Mamyrbayev, mohammed Othman, Dinara Kassymova and Kuralai Mukhsina: Contampory Approaches in Evolving  Langueage Models
+	https://www.mdpi.com/2076-3417/13/23/12901
 
-    \bibitem{mdpi2}
-    Abir Rahali and Moulay A. Akhloufi: End to end Transformer Based Models in Textual-based NLP
-    https://www.mdpi.com/2076-3417/13/23/12901
+	\bibitem{mdpi2}
+	Abir Rahali and Moulay A. Akhloufi: End to end Transformer Based Models in Textual-based NLP
+	https://www.mdpi.com/2076-3417/13/23/12901
 
 \end{thebibliography}
 
