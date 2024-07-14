@@ -472,7 +472,7 @@ Die Perplexität ist das wichtigste Maß, um die Qualität eines n-Gram Modells 
 	\includegraphics[width=0.8\textwidth]{statics/Furitsch/prod_var.png}
 \end{center}
 Es werden also die Wahrscheinlichkeiten aller Präfix/Suffix Kombinationen des Testsatzes in ein Produkt umgewandelt und dieses wird durch den negativen Durchschnitt poteziert.
-Doch diese Variante bringt einige Probleme mit sich. Zum einen können ohne die Verwendung von Smoothing Techniken Nullwahrscheinlichkeiten mit in das Produkt einfließen was das Peodukt in jedem Fall 0 macht. Außerdem ist diese Variante unstabil bei sehr vielen sehr kleinen Werten da der Endwert dadurch immer kleiner wird.
+Doch diese Variante bringt einige Probleme mit sich. Zum einen können ohne die Verwendung von Smoothing Techniken Nullwahrscheinlichkeiten mit in das Produkt einfließen was das Produkt in jedem Fall 0 macht. Außerdem ist diese Variante unstabil bei sehr vielen sehr kleinen Werten da der Endwert dadurch immer kleiner wird.
 Deshalb gibt es eine äquivalente Umformung
 \cite{jurafsk}
 \begin{center}
